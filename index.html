@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WK App Pro Live</title>
+<title>WK App Live Pro</title>
 
 <style>
 body{
-font-family: Arial;
+font-family:Arial;
 margin:0;
-background: linear-gradient(135deg,#06142e,#0b1d3a);
+background:linear-gradient(135deg,#06142e,#0b1d3a);
 color:white;
 }
 
@@ -62,13 +62,17 @@ margin-top:10px;
 border-radius:10px;
 border-left:4px solid #1e90ff;
 }
+
+.live{
+border-left:4px solid red;
+}
 </style>
 
 </head>
 
 <body>
 
-<header>🏆 WK APP PRO LIVE</header>
+<header>🏆 WK LIVE PRO</header>
 
 <div id="clock"></div>
 
@@ -85,6 +89,7 @@ border-left:4px solid #1e90ff;
 
 <script>
 
+// CLOCK
 function updateClock(){
 document.getElementById("clock").innerHTML =
 "🕒 België: " + new Date().toLocaleTimeString("nl-BE");
@@ -92,37 +97,37 @@ document.getElementById("clock").innerHTML =
 setInterval(updateClock,1000);
 updateClock();
 
+// HOME
 function home(){
 document.getElementById("content").innerHTML=`
 <div class="card">
-Welkom bij je LIVE WK App ⚽
+Welkom bij WK Live Pro ⚽
 </div>
 <div class="card">
-Klik op Wedstrijden om live data te laden.
+Klik op Wedstrijden voor live of WK data.
 </div>
 `;
 }
 
+// WEDSTRIJDEN (LIVE + FALLBACK)
 function wedstrijden(){
 
-document.getElementById("content").innerHTML=
-`<div class="card">⏳ Live data laden...</div>`;
+document.getElementById("content").innerHTML =
+`<div class="card">⏳ Data laden...</div>`;
 
 fetch("https://www.thesportsdb.com/api/v1/json/3/livescore.php?s=Soccer")
 .then(r=>r.json())
 .then(data=>{
 
-if(!data.events){
-document.getElementById("content").innerHTML=
-`<div class="card">Geen live wedstrijden op dit moment.</div>`;
-return;
-}
-
 let html="";
+
+if(data.events && data.events.length>0){
+
+html += `<div class="card live"><b>🔴 LIVE WEDSTRIJDEN</b></div>`;
 
 data.events.forEach(m=>{
 html += `
-<div class="card">
+<div class="card live">
 ⚽ <b>${m.strHomeTeam}</b> ${m.intHomeScore ?? 0} - ${m.intAwayScore ?? 0} <b>${m.strAwayTeam}</b><br>
 🏟 ${m.strVenue || "Onbekend"}<br>
 📍 ${m.strCity || ""}
@@ -130,31 +135,52 @@ html += `
 `;
 });
 
+}else{
+
+let wk = [
+"Mexico vs Zuid-Afrika",
+"Canada vs Italië",
+"Brazilië vs Japan",
+"Frankrijk vs Nigeria",
+"Duitsland vs USA"
+];
+
+html += `<div class="card"><b>🏆 WK Schema</b></div>`;
+
+wk.forEach(m=>{
+html += `<div class="card">⚽ ${m}</div>`;
+});
+
+}
+
 document.getElementById("content").innerHTML=html;
 
 })
 .catch(()=>{
 
 document.getElementById("content").innerHTML=
-`<div class="card">❌ Fout bij laden van data</div>`;
+`<div class="card">❌ Geen data beschikbaar</div>`;
 
 });
 
 }
 
+// SPELERS
 function spelers(){
 document.getElementById("content").innerHTML=`
-<div class="card">🇧🇪 De Bruyne - Middenvelder</div>
-<div class="card">🇧🇪 Lukaku - Aanvaller</div>
-<div class="card">🇫🇷 Mbappé - Aanvaller</div>
+<div class="card">🇧🇪 De Bruyne</div>
+<div class="card">🇧🇪 Lukaku</div>
+<div class="card">🇫🇷 Mbappé</div>
+<div class="card">🇧🇷 Vinícius</div>
 `;
 }
 
+// STADIONS
 function stadions(){
 document.getElementById("content").innerHTML=`
-<div class="card">🏟 Maracanã - Brazilië</div>
-<div class="card">🏟 Wembley - Engeland</div>
-<div class="card">🏟 Bernabéu - Spanje</div>
+<div class="card">🏟 MetLife Stadium (USA)</div>
+<div class="card">🏟 Estadio Azteca (Mexico)</div>
+<div class="card">🏟 BC Place (Canada)</div>
 `;
 }
 
