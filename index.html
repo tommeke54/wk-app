@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WK App Pro</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#06142e,#0b1d3a);
+    color:white;
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    text-shadow:0 0 15px rgba(30,144,255,0.6);
+}
+
+#clock{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+.menu{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+button{
+    background:#1e90ff;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    margin:5px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    border-left:4px solid #1e90ff;
+    border-radius:12px;
+    padding:15px;
+    margin-top:10px;
+}
+
+.favorite{
+    color:gold;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>🏆 WK APP PRO</h1>
+
+<div id="clock"></div>
+
+<div class="menu">
+
+<button onclick="toonHome()">🏠 Home</button>
+
+<button onclick="toonWedstrijden()">⚽ Wedstrijden</button>
+
+<button onclick="toonSpelers()">👥 Spelers</button>
+
+<button onclick="toonStadions()">🏟 Stadions</button>
+
+<button onclick="kiesFavoriet()">⭐ Favoriet</button>
+
+</div>
+
+<div id="inhoud"></div>
+
+<script>
+
+let favoriet = "Nog geen ploeg gekozen";
+
+// klok
+function updateClock(){
+const now = new Date();
+
+document.getElementById("clock").innerHTML =
+"🕒 België: " + now.toLocaleTimeString("nl-BE");
+}
+
+setInterval(updateClock,1000);
+updateClock();
+
+function toonHome(){
+
+document.getElementById("inhoud").innerHTML=`
+
+<div class="card">
+Welkom bij jouw WK App.
+</div>
+
+<div class="card favorite">
+⭐ Favoriete ploeg: ${favoriet}
+</div>
+
+<div class="card">
+⚽ Wedstrijden bekijken<br>
+👥 Spelers bekijken<br>
+🏟 Stadions bekijken
+</div>
+
+`;
+
+}
+
+function toonWedstrijden(){
+
+document.getElementById("inhoud").innerHTML=`
+
+<div class="card">
+🇧🇪 België - Frankrijk<br>
+⏰ 18:00<br>
+🏟 Koning Boudewijnstadion
+</div>
+
+<div class="card">
+🇧🇷 Brazilië - Argentinië<br>
+⏰ 21:00<br>
+🏟 Maracanã
+</div>
+
+<div class="card">
+🇳🇱 Nederland - Duitsland<br>
+⏰ 20:00<br>
+🏟 Johan Cruijff Arena
+</div>
+
+`;
+
+}
+
+function toonSpelers(){
+
+document.getElementById("inhoud").innerHTML=`
+
+<div class="card">
+🇧🇪 Kevin De Bruyne<br>
+Positie: Middenvelder
+</div>
+
+<div class="card">
+🇧🇪 Romelu Lukaku<br>
+Positie: Aanvaller
+</div>
+
+<div class="card">
+🇫🇷 Kylian Mbappé<br>
+Positie: Aanvaller
+</div>
+
+<div class="card">
+🇧🇷 Vinícius Júnior<br>
+Positie: Aanvaller
+</div>
+
+`;
+
+}
+
+function toonStadions(){
+
+document.getElementById("inhoud").innerHTML=`
+
+<div class="card">
+🏟 Koning Boudewijnstadion<br>
+📍 Brussel, België<br>
+👥 Capaciteit: 50.000
+</div>
+
+<div class="card">
+🏟 Maracanã<br>
+📍 Rio de Janeiro, Brazilië<br>
+👥 Capaciteit: 78.000
+</div>
+
+<div class="card">
+🏟 Johan Cruijff Arena<br>
+📍 Amsterdam, Nederland<br>
+👥 Capaciteit: 55.000
+</div>
+
+`;
+
+}
+
+function kiesFavoriet(){
+
+const ploeg = prompt(
+"Welke ploeg is jouw favoriet?"
+);
+
+if(ploeg){
+favoriet = ploeg;
+toonHome();
+}
+
+}
+
+toonHome();
+
+</script>
+
+</body>
+</html>
