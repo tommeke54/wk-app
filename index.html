@@ -1,79 +1,66 @@
 <!DOCTYPE html>
-
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WK App Pro</title>
+<title>WK App Pro Live</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#06142e,#0b1d3a);
+font-family: Arial;
+margin:0;
+background: linear-gradient(135deg,#06142e,#0b1d3a);
 color:white;
-min-height:100vh;
 }
 
 header{
-background:rgba(0,0,0,0.25);
-padding:20px;
 text-align:center;
-font-size:28px;
+padding:20px;
+font-size:26px;
 font-weight:bold;
 }
 
 #clock{
 text-align:center;
 padding:10px;
-font-size:18px;
+font-size:16px;
 }
 
 .menu{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 gap:10px;
-padding:15px;
+padding:10px;
 }
 
 button{
 background:#1e90ff;
 border:none;
 color:white;
-padding:12px 18px;
-border-radius:10px;
+padding:10px 14px;
+border-radius:8px;
 cursor:pointer;
-font-size:16px;
+font-size:14px;
 }
 
 button:hover{
-opacity:.9;
+opacity:0.9;
 }
 
 .container{
-max-width:1000px;
-margin:auto;
 padding:15px;
+max-width:900px;
+margin:auto;
 }
 
 .card{
-background:rgba(255,255,255,.08);
-padding:15px;
-border-radius:12px;
-margin-bottom:15px;
+background:rgba(255,255,255,0.08);
+padding:12px;
+margin-top:10px;
+border-radius:10px;
 border-left:4px solid #1e90ff;
-}
-
-.title{
-font-size:22px;
-margin-bottom:10px;
 }
 </style>
 
@@ -81,7 +68,7 @@ margin-bottom:10px;
 
 <body>
 
-<header>🏆 WK APP PRO</header>
+<header>🏆 WK APP PRO LIVE</header>
 
 <div id="clock"></div>
 
@@ -90,7 +77,6 @@ margin-bottom:10px;
 <button onclick="wedstrijden()">⚽ Wedstrijden</button>
 <button onclick="spelers()">👥 Spelers</button>
 <button onclick="stadions()">🏟 Stadions</button>
-<button onclick="favoriet()">⭐ Favoriet</button>
 </div>
 
 <div class="container">
@@ -99,82 +85,77 @@ margin-bottom:10px;
 
 <script>
 
-let favorietePloeg = "België";
-
 function updateClock(){
-const now = new Date();
 document.getElementById("clock").innerHTML =
-"🕒 België: " + now.toLocaleTimeString("nl-BE");
+"🕒 België: " + new Date().toLocaleTimeString("nl-BE");
 }
-
 setInterval(updateClock,1000);
 updateClock();
 
 function home(){
-document.getElementById("content").innerHTML = `
+document.getElementById("content").innerHTML=`
 <div class="card">
-<div class="title">Welkom</div>
-Welkom bij jouw professionele WK-app.
+Welkom bij je LIVE WK App ⚽
 </div>
-
 <div class="card">
-⭐ Favoriete ploeg: ${favorietePloeg}
+Klik op Wedstrijden om live data te laden.
 </div>
 `;
 }
 
 function wedstrijden(){
-document.getElementById("content").innerHTML = `
-<div class="card">
-🇧🇪 België vs Frankrijk<br>
-⏰ 18:00<br>
-🏟 Koning Boudewijnstadion
-</div>
 
+document.getElementById("content").innerHTML=
+`<div class="card">⏳ Live data laden...</div>`;
+
+fetch("https://www.thesportsdb.com/api/v1/json/3/livescore.php?s=Soccer")
+.then(r=>r.json())
+.then(data=>{
+
+if(!data.events){
+document.getElementById("content").innerHTML=
+`<div class="card">Geen live wedstrijden op dit moment.</div>`;
+return;
+}
+
+let html="";
+
+data.events.forEach(m=>{
+html += `
 <div class="card">
-🇧🇷 Brazilië vs Argentinië<br>
-⏰ 21:00<br>
-🏟 Maracanã
+⚽ <b>${m.strHomeTeam}</b> ${m.intHomeScore ?? 0} - ${m.intAwayScore ?? 0} <b>${m.strAwayTeam}</b><br>
+🏟 ${m.strVenue || "Onbekend"}<br>
+📍 ${m.strCity || ""}
 </div>
 `;
+});
+
+document.getElementById("content").innerHTML=html;
+
+})
+.catch(()=>{
+
+document.getElementById("content").innerHTML=
+`<div class="card">❌ Fout bij laden van data</div>`;
+
+});
+
 }
 
 function spelers(){
-document.getElementById("content").innerHTML = `
-<div class="card">
-🇧🇪 Kevin De Bruyne - Middenvelder
-</div>
-
-<div class="card">
-🇧🇪 Romelu Lukaku - Aanvaller
-</div>
-
-<div class="card">
-🇫🇷 Kylian Mbappé - Aanvaller
-</div>
+document.getElementById("content").innerHTML=`
+<div class="card">🇧🇪 De Bruyne - Middenvelder</div>
+<div class="card">🇧🇪 Lukaku - Aanvaller</div>
+<div class="card">🇫🇷 Mbappé - Aanvaller</div>
 `;
 }
 
 function stadions(){
-document.getElementById("content").innerHTML = `
-<div class="card">
-🏟 Koning Boudewijnstadion<br>
-📍 Brussel
-</div>
-
-<div class="card">
-🏟 Maracanã<br>
-📍 Rio de Janeiro
-</div>
+document.getElementById("content").innerHTML=`
+<div class="card">🏟 Maracanã - Brazilië</div>
+<div class="card">🏟 Wembley - Engeland</div>
+<div class="card">🏟 Bernabéu - Spanje</div>
 `;
-}
-
-function favoriet(){
-const ploeg = prompt("Welke ploeg is jouw favoriet?");
-if(ploeg){
-favorietePloeg = ploeg;
-home();
-}
 }
 
 home();
