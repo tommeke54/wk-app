@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
@@ -7,92 +8,101 @@
 <title>WK App Pro</title>
 
 <style>
-
-body{
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#06142e,#0b1d3a);
-    color:white;
-    margin:0;
-    padding:20px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-h1{
-    text-align:center;
-    text-shadow:0 0 15px rgba(30,144,255,0.6);
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#06142e,#0b1d3a);
+color:white;
+min-height:100vh;
+}
+
+header{
+background:rgba(0,0,0,0.25);
+padding:20px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
 }
 
 #clock{
-    text-align:center;
-    margin-bottom:20px;
-    font-size:18px;
+text-align:center;
+padding:10px;
+font-size:18px;
 }
 
 .menu{
-    text-align:center;
-    margin-bottom:20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+padding:15px;
 }
 
 button{
-    background:#1e90ff;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    margin:5px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:15px;
+background:#1e90ff;
+border:none;
+color:white;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
 }
 
 button:hover{
-    opacity:0.9;
+opacity:.9;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:15px;
 }
 
 .card{
-    background:rgba(255,255,255,0.08);
-    border-left:4px solid #1e90ff;
-    border-radius:12px;
-    padding:15px;
-    margin-top:10px;
+background:rgba(255,255,255,.08);
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+border-left:4px solid #1e90ff;
 }
 
-.favorite{
-    color:gold;
-    font-weight:bold;
+.title{
+font-size:22px;
+margin-bottom:10px;
 }
-
 </style>
 
 </head>
+
 <body>
 
-<h1>🏆 WK APP PRO</h1>
+<header>🏆 WK APP PRO</header>
 
 <div id="clock"></div>
 
 <div class="menu">
-
-<button onclick="toonHome()">🏠 Home</button>
-
-<button onclick="toonWedstrijden()">⚽ Wedstrijden</button>
-
-<button onclick="toonSpelers()">👥 Spelers</button>
-
-<button onclick="toonStadions()">🏟 Stadions</button>
-
-<button onclick="kiesFavoriet()">⭐ Favoriet</button>
-
+<button onclick="home()">🏠 Home</button>
+<button onclick="wedstrijden()">⚽ Wedstrijden</button>
+<button onclick="spelers()">👥 Spelers</button>
+<button onclick="stadions()">🏟 Stadions</button>
+<button onclick="favoriet()">⭐ Favoriet</button>
 </div>
 
-<div id="inhoud"></div>
+<div class="container">
+<div id="content"></div>
+</div>
 
 <script>
 
-let favoriet = "Nog geen ploeg gekozen";
+let favorietePloeg = "België";
 
-// klok
 function updateClock(){
 const now = new Date();
-
 document.getElementById("clock").innerHTML =
 "🕒 België: " + now.toLocaleTimeString("nl-BE");
 }
@@ -100,122 +110,74 @@ document.getElementById("clock").innerHTML =
 setInterval(updateClock,1000);
 updateClock();
 
-function toonHome(){
-
-document.getElementById("inhoud").innerHTML=`
-
+function home(){
+document.getElementById("content").innerHTML = `
 <div class="card">
-Welkom bij jouw WK App.
-</div>
-
-<div class="card favorite">
-⭐ Favoriete ploeg: ${favoriet}
+<div class="title">Welkom</div>
+Welkom bij jouw professionele WK-app.
 </div>
 
 <div class="card">
-⚽ Wedstrijden bekijken<br>
-👥 Spelers bekijken<br>
-🏟 Stadions bekijken
+⭐ Favoriete ploeg: ${favorietePloeg}
 </div>
-
 `;
-
 }
 
-function toonWedstrijden(){
-
-document.getElementById("inhoud").innerHTML=`
-
+function wedstrijden(){
+document.getElementById("content").innerHTML = `
 <div class="card">
-🇧🇪 België - Frankrijk<br>
+🇧🇪 België vs Frankrijk<br>
 ⏰ 18:00<br>
 🏟 Koning Boudewijnstadion
 </div>
 
 <div class="card">
-🇧🇷 Brazilië - Argentinië<br>
+🇧🇷 Brazilië vs Argentinië<br>
 ⏰ 21:00<br>
 🏟 Maracanã
 </div>
-
-<div class="card">
-🇳🇱 Nederland - Duitsland<br>
-⏰ 20:00<br>
-🏟 Johan Cruijff Arena
-</div>
-
 `;
-
 }
 
-function toonSpelers(){
-
-document.getElementById("inhoud").innerHTML=`
-
+function spelers(){
+document.getElementById("content").innerHTML = `
 <div class="card">
-🇧🇪 Kevin De Bruyne<br>
-Positie: Middenvelder
+🇧🇪 Kevin De Bruyne - Middenvelder
 </div>
 
 <div class="card">
-🇧🇪 Romelu Lukaku<br>
-Positie: Aanvaller
+🇧🇪 Romelu Lukaku - Aanvaller
 </div>
 
 <div class="card">
-🇫🇷 Kylian Mbappé<br>
-Positie: Aanvaller
+🇫🇷 Kylian Mbappé - Aanvaller
 </div>
-
-<div class="card">
-🇧🇷 Vinícius Júnior<br>
-Positie: Aanvaller
-</div>
-
 `;
-
 }
 
-function toonStadions(){
-
-document.getElementById("inhoud").innerHTML=`
-
+function stadions(){
+document.getElementById("content").innerHTML = `
 <div class="card">
 🏟 Koning Boudewijnstadion<br>
-📍 Brussel, België<br>
-👥 Capaciteit: 50.000
+📍 Brussel
 </div>
 
 <div class="card">
 🏟 Maracanã<br>
-📍 Rio de Janeiro, Brazilië<br>
-👥 Capaciteit: 78.000
+📍 Rio de Janeiro
 </div>
-
-<div class="card">
-🏟 Johan Cruijff Arena<br>
-📍 Amsterdam, Nederland<br>
-👥 Capaciteit: 55.000
-</div>
-
 `;
-
 }
 
-function kiesFavoriet(){
-
-const ploeg = prompt(
-"Welke ploeg is jouw favoriet?"
-);
-
+function favoriet(){
+const ploeg = prompt("Welke ploeg is jouw favoriet?");
 if(ploeg){
-favoriet = ploeg;
-toonHome();
+favorietePloeg = ploeg;
+home();
+}
 }
 
-}
-
-toonHome();
+home();
 
 </script>
 
