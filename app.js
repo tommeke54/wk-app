@@ -72,49 +72,7 @@ ${favoriteTeam}
 
 }
 
-function showMatches() {
 
-app.innerHTML = `
-
-<div class="card match-card">
-
-<h2>⚽ Wedstrijd 1</h2>
-
-🇧🇪 België
-
-<div class="vs">VS</div>
-
-🇫🇷 Frankrijk
-
-<br><br>
-
-📅 20 juni 2026<br>
-🕘 21:00<br>
-🏟 MetLife Stadium
-
-</div>
-
-<div class="card match-card">
-
-<h2>⚽ Wedstrijd 2</h2>
-
-🇧🇷 Brazilië
-
-<div class="vs">VS</div>
-
-🇯🇵 Japan
-
-<br><br>
-
-📅 21 juni 2026<br>
-🕘 18:00<br>
-🏟 Estadio Azteca
-
-</div>
-
-`;
-
-}
 
 function showTeams() {
 
