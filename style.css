@@ -207,3 +207,14 @@ button:active{
     font-size:30px;
   }
 }
+.flags img{
+width:40px;
+height:28px;
+border-radius:4px;
+box-shadow:0 0 8px rgba(0,0,0,.4);
+transition:.3s;
+}
+
+.flags img:hover{
+transform:scale(1.15);
+}
