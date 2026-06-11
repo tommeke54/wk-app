@@ -276,49 +276,82 @@ function showStandings() {
     </div>
   `;
 }
-
 function showKnockout() {
   app.innerHTML = `
     <div class="card">
-      <h2>🏆 Knock-out Center</h2>
-      Weg naar de wereldbeker
+      <h2>🏆 Knock-out Center Pro</h2>
+      De weg naar de wereldbeker
     </div>
 
     <div class="card match-card">
-      <h2>🏆 Achtste Finale</h2>
+      <h2>🏆 Achtste Finales</h2>
+
       🇧🇪 België
       <div class="vs">VS</div>
       🇯🇵 Japan<br><br>
-      📅 30 juni 2026<br>
-      🏟 MetLife Stadium
-    </div>
 
-    <div class="card match-card">
-      <h2>🏆 Kwartfinale</h2>
       🇫🇷 Frankrijk
       <div class="vs">VS</div>
-      🇳🇱 Nederland<br><br>
-      📅 5 juli 2026<br>
-      🏟 Estadio Azteca
+      🇺🇸 Verenigde Staten<br><br>
+
+      🇧🇷 Brazilië
+      <div class="vs">VS</div>
+      🇲🇽 Mexico<br><br>
+
+      🇳🇱 Nederland
+      <div class="vs">VS</div>
+      🇦🇷 Argentinië
     </div>
 
     <div class="card match-card">
-      <h2>🏆 Halve Finale</h2>
+      <h2>🔥 Kwartfinales</h2>
+
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇫🇷 Frankrijk<br><br>
+
       🇧🇷 Brazilië
       <div class="vs">VS</div>
-      🇩🇪 Duitsland<br><br>
-      📅 10 juli 2026<br>
-      🏟 BC Place
+      🇳🇱 Nederland
+    </div>
+
+    <div class="card match-card">
+      <h2>⚡ Halve Finales</h2>
+
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇧🇷 Brazilië<br><br>
+
+      🇫🇷 Frankrijk
+      <div class="vs">VS</div>
+      🇳🇱 Nederland
     </div>
 
     <div class="card match-card">
       <h2>🏆 Finale</h2>
+
       🇧🇪 België
       <div class="vs">VS</div>
       🇧🇷 Brazilië<br><br>
+
       📅 19 juli 2026<br>
       🏟 MetLife Stadium<br><br>
-      🏆 Winnaar wordt wereldkampioen
+
+      👑 Wereldkampioen: Nog te bepalen
+    </div>
+
+    <div class="card match-card">
+      <h2>👑 Wereldkampioen-pad</h2>
+
+      Achtste finales<br>
+      ↓<br>
+      Kwartfinales<br>
+      ↓<br>
+      Halve finales<br>
+      ↓<br>
+      Finale<br>
+      ↓<br>
+      🏆 Wereldkampioen
     </div>
   `;
 }
