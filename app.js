@@ -130,82 +130,68 @@ function showTeams(){
 app.innerHTML = `
 
 <div class="card">
-
 <h2>🇧🇪 België</h2>
 
-🏆 FIFA Ranking: Top 10
+🏆 FIFA Ranking: Top 10<br>
+📌 Groep: Groep A<br>
+👔 Bondscoach: Rudi Garcia<br>
+📊 Gemiddelde leeftijd: ±27 jaar
 
 <br><br>
 
-👔 Bondscoach:
-Rudi Garcia
-
-<br><br>
-
-⭐ Sterspelers
-
-<br><br>
+⭐ Sterspelers<br><br>
 
 ⚽ Kevin De Bruyne<br>
 ⚽ Romelu Lukaku<br>
-⚽ Jérémy Doku
+⚽ Jérémy Doku<br>
+⚽ Youri Tielemans
 
 <br><br>
 
 <button onclick="setFavorite('België 🇧🇪')">
 ⭐ Favoriet maken
 </button>
-
 </div>
 
 <div class="card">
-
 <h2>🇫🇷 Frankrijk</h2>
 
-🏆 FIFA Ranking: Top 5
+🏆 FIFA Ranking: Top 5<br>
+📌 Groep: Groep A<br>
+👔 Bondscoach: Didier Deschamps<br>
+📊 Gemiddelde leeftijd: ±26 jaar
 
 <br><br>
 
-👔 Bondscoach:
-Didier Deschamps
-
-<br><br>
-
-⭐ Sterspelers
-
-<br><br>
+⭐ Sterspelers<br><br>
 
 ⚽ Kylian Mbappé<br>
-⚽ Ousmane Dembélé<br>
-⚽ Eduardo Camavinga
+⚽ Antoine Griezmann<br>
+⚽ Eduardo Camavinga<br>
+⚽ Ousmane Dembélé
 
 <br><br>
 
 <button onclick="setFavorite('Frankrijk 🇫🇷')">
 ⭐ Favoriet maken
 </button>
-
 </div>
 
 <div class="card">
-
 <h2>🇧🇷 Brazilië</h2>
 
-🏆 FIFA Ranking: Top 5
+🏆 FIFA Ranking: Top 5<br>
+📌 Groep: Groep B<br>
+👔 Bondscoach: Carlo Ancelotti<br>
+📊 Gemiddelde leeftijd: ±26 jaar
 
 <br><br>
 
-👔 Bondscoach:
-Carlo Ancelotti
-
-<br><br>
-
-⭐ Sterspelers
-
-<br><br>
+⭐ Sterspelers<br><br>
 
 ⚽ Vinícius Júnior<br>
 ⚽ Rodrygo<br>
+⚽ Bruno Guimarães<br>
 ⚽ Marquinhos
 
 <br><br>
@@ -213,7 +199,54 @@ Carlo Ancelotti
 <button onclick="setFavorite('Brazilië 🇧🇷')">
 ⭐ Favoriet maken
 </button>
+</div>
 
+<div class="card">
+<h2>🇩🇪 Duitsland</h2>
+
+🏆 FIFA Ranking: Top 10<br>
+📌 Groep: Groep B<br>
+👔 Bondscoach: Julian Nagelsmann<br>
+📊 Gemiddelde leeftijd: ±27 jaar
+
+<br><br>
+
+⭐ Sterspelers<br><br>
+
+⚽ Jamal Musiala<br>
+⚽ Florian Wirtz<br>
+⚽ Kai Havertz<br>
+⚽ Joshua Kimmich
+
+<br><br>
+
+<button onclick="setFavorite('Duitsland 🇩🇪')">
+⭐ Favoriet maken
+</button>
+</div>
+
+<div class="card">
+<h2>🇳🇱 Nederland</h2>
+
+🏆 FIFA Ranking: Top 10<br>
+📌 Groep: Groep C<br>
+👔 Bondscoach: Ronald Koeman<br>
+📊 Gemiddelde leeftijd: ±26 jaar
+
+<br><br>
+
+⭐ Sterspelers<br><br>
+
+⚽ Virgil van Dijk<br>
+⚽ Xavi Simons<br>
+⚽ Cody Gakpo<br>
+⚽ Frenkie de Jong
+
+<br><br>
+
+<button onclick="setFavorite('Nederland 🇳🇱')">
+⭐ Favoriet maken
+</button>
 </div>
 
 `;
