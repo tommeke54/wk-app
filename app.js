@@ -16,6 +16,12 @@ function getCountdown() {
   return `${days}d ${hours}u ${minutes}m`;
 }
 
+function stadiumTime() {
+  return new Date().toLocaleTimeString("nl-BE", {
+    timeZone: "America/New_York"
+  });
+}
+
 function setFavorite(team) {
   favoriteTeam = team;
   localStorage.setItem("favoriteTeam", team);
@@ -26,20 +32,22 @@ function showHome() {
   app.innerHTML = `
     <div class="card">
       <h2>🏆 Mijn WK Dashboard</h2>
-      Welkom bij WorldCup Live Pro
+      WorldCup Live Pro
     </div>
 
     <div class="card">
-      <h2>⭐ Mijn favoriete ploeg</h2>
-      ${favoriteTeam}<br><br>
+      <h2>⭐ Favoriete ploeg</h2>
+      <strong>${favoriteTeam}</strong><br><br>
       <button onclick="showTeams()">Favoriet wijzigen</button>
     </div>
 
-    <div class="card">
+    <div class="card match-card">
       <h2>⚽ Volgende wedstrijd</h2>
-      🇧🇪 België vs Frankrijk 🇫🇷<br><br>
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇫🇷 Frankrijk<br><br>
       📅 20 juni 2026<br>
-      🕘 21:00<br>
+      🕘 Belgische tijd: 21:00<br>
       🏟 MetLife Stadium
     </div>
 
@@ -49,10 +57,27 @@ function showHome() {
     </div>
 
     <div class="card">
+      <h2>🏟 Stadioninfo</h2>
+      MetLife Stadium<br>
+      📍 East Rutherford, New Jersey<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: ongeveer 82.500<br>
+      🕒 Lokale stadiontijd: ${stadiumTime()}
+    </div>
+
+    <div class="card">
+      <h2>📊 Mini-stand Groep A</h2>
+      🇧🇪 België — 7 punten<br>
+      🇫🇷 Frankrijk — 6 punten<br>
+      🇧🇷 Brazilië — 4 punten<br>
+      🇩🇪 Duitsland — 0 punten
+    </div>
+
+    <div class="card">
       <h2>📰 WK Nieuws</h2>
-      • WK voorbereiding volop bezig<br>
-      • Stadions worden klaargemaakt<br>
-      • Favoriete teams bekend
+      • België bereidt zich voor op topper tegen Frankrijk<br>
+      • MetLife Stadium klaar voor wereldpodium<br>
+      • Favorieten voor de wereldtitel nemen vorm aan
     </div>
   `;
 }
@@ -251,4 +276,5 @@ function showStandings() {
     </div>
   `;
 }
+
 showHome();
