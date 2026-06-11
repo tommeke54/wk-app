@@ -95,7 +95,28 @@ font-weight:bold;
 color:#f4c542;
 margin:15px 0;
 }
+.standings-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
 
+.standings-table th,
+.standings-table td{
+  padding:10px;
+  text-align:left;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+.standings-table th{
+  color:#f4c542;
+}
+
+.standings-table td:last-child,
+.standings-table th:last-child{
+  font-weight:bold;
+  text-align:center;
+}
 
 
 
