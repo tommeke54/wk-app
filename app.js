@@ -42,7 +42,7 @@ showHome();
 
 }
 
-function showHome() {
+function showHome(){
 
 app.innerHTML = `
 
@@ -53,28 +53,79 @@ Welkom bij WorldCup Live Pro
 
 <div class="card">
 <h2>⚽ Volgende wedstrijd</h2>
-België 🇧🇪 vs Frankrijk 🇫🇷
+
+🇧🇪 België vs Frankrijk 🇫🇷
+
 <br><br>
-20 juni 2026 - 21:00
+
+📅 20 juni 2026 <br>
+🕘 21:00
+
 </div>
 
 <div class="card">
 <h2>⏳ Countdown</h2>
+
 ${getCountdown()}
+
 </div>
 
 <div class="card">
 <h2>⭐ Favoriete ploeg</h2>
+
 ${favoriteTeam}
+
 </div>
 
 `;
 
 }
 
+function showMatches(){
 
+app.innerHTML = `
 
-function showTeams() {
+<div class="card match-card">
+
+<h2>⚽ Wedstrijd 1</h2>
+
+🇧🇪 België
+
+<div class="vs">VS</div>
+
+🇫🇷 Frankrijk
+
+<br><br>
+
+📅 20 juni 2026<br>
+🕘 21:00<br>
+🏟 MetLife Stadium
+
+</div>
+
+<div class="card match-card">
+
+<h2>⚽ Wedstrijd 2</h2>
+
+🇧🇷 Brazilië
+
+<div class="vs">VS</div>
+
+🇯🇵 Japan
+
+<br><br>
+
+📅 21 juni 2026<br>
+🕘 18:00<br>
+🏟 Estadio Azteca
+
+</div>
+
+`;
+
+}
+
+function showTeams(){
 
 app.innerHTML = `
 
@@ -91,18 +142,12 @@ Rudi Garcia
 
 <br><br>
 
-⭐ Sterspelers:
+⭐ Sterspelers
 
-<br>
+<br><br>
 
-⚽ Kevin De Bruyne
-
-<br>
-
-⚽ Romelu Lukaku
-
-<br>
-
+⚽ Kevin De Bruyne<br>
+⚽ Romelu Lukaku<br>
 ⚽ Jérémy Doku
 
 <br><br>
@@ -126,18 +171,12 @@ Didier Deschamps
 
 <br><br>
 
-⭐ Sterspelers:
+⭐ Sterspelers
 
-<br>
+<br><br>
 
-⚽ Kylian Mbappé
-
-<br>
-
-⚽ Ousmane Dembélé
-
-<br>
-
+⚽ Kylian Mbappé<br>
+⚽ Ousmane Dembélé<br>
 ⚽ Eduardo Camavinga
 
 <br><br>
@@ -161,18 +200,12 @@ Carlo Ancelotti
 
 <br><br>
 
-⭐ Sterspelers:
+⭐ Sterspelers
 
-<br>
+<br><br>
 
-⚽ Vinícius Júnior
-
-<br>
-
-⚽ Rodrygo
-
-<br>
-
+⚽ Vinícius Júnior<br>
+⚽ Rodrygo<br>
 ⚽ Marquinhos
 
 <br><br>
@@ -187,76 +220,33 @@ Carlo Ancelotti
 
 }
 
-app.innerHTML = `
-
-<div class="card">
-<h2>🇧🇪 België</h2>
-
-Bondscoach: Rudi Garcia
-
-<br><br>
-
-<button onclick="setFavorite('België 🇧🇪')">
-Favoriet maken
-</button>
-
-</div>
-
-<div class="card">
-<h2>🇫🇷 Frankrijk</h2>
-
-Bondscoach: Didier Deschamps
-
-<br><br>
-
-<button onclick="setFavorite('Frankrijk 🇫🇷')">
-Favoriet maken
-</button>
-
-</div>
-
-<div class="card">
-<h2>🇧🇷 Brazilië</h2>
-
-Bondscoach: Carlo Ancelotti
-
-<br><br>
-
-<button onclick="setFavorite('Brazilië 🇧🇷')">
-Favoriet maken
-</button>
-
-</div>
-
-`;
-
-}
-
-function showStadiums() {
+function showStadiums(){
 
 app.innerHTML = `
 
 <div class="card">
+
 <h2>🏟 MetLife Stadium</h2>
 
 📍 New Jersey, USA
 
 <br><br>
 
-Capaciteit:
-82.500
+👥 Capaciteit: 82.500
 
 </div>
 
 <div class="card">
+
 <h2>🏟 Estadio Azteca</h2>
 
 📍 Mexico-Stad
 
 <br><br>
 
-Capaciteit:
-87.500
+👥 Capaciteit: 87.500
+
+</div>
 
 </div>
 
@@ -264,17 +254,18 @@ Capaciteit:
 
 }
 
-function showStandings() {
+function showStandings(){
 
 app.innerHTML = `
 
 <div class="card">
-<h2>📊 Standen</h2>
 
-1. België<br>
-2. Frankrijk<br>
-3. Brazilië<br>
-4. Duitsland
+<h2>📊 Groep A</h2>
+
+1. België - 6 ptn<br>
+2. Frankrijk - 4 ptn<br>
+3. Brazilië - 3 ptn<br>
+4. Duitsland - 1 ptn
 
 </div>
 
