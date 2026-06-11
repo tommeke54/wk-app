@@ -1,3 +1,4 @@
+
 const app = document.getElementById("appContent");
 
 let favoriteTeam = localStorage.getItem("favoriteTeam") || "België 🇧🇪";
