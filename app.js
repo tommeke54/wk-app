@@ -222,26 +222,33 @@ function showStadiums() {
 function showStandings() {
   app.innerHTML = `
     <div class="card">
-      <h2>📊 WK 2026 Standen</h2>
+      <h2>📊 WK 2026 Standen Pro</h2>
       Groepsfase overzicht
     </div>
 
     <div class="card">
       <h2>📊 Groep A</h2>
-      🇧🇪 België - 7 punten<br>
-      🇫🇷 Frankrijk - 6 punten<br>
-      🇧🇷 Brazilië - 4 punten<br>
-      🇩🇪 Duitsland - 0 punten
+      🇧🇪 België — 3 gespeeld — 7 punten<br>
+      🇫🇷 Frankrijk — 3 gespeeld — 6 punten<br>
+      🇧🇷 Brazilië — 3 gespeeld — 4 punten<br>
+      🇩🇪 Duitsland — 3 gespeeld — 0 punten
     </div>
 
     <div class="card">
       <h2>📊 Groep B</h2>
-      🇳🇱 Nederland - 7 punten<br>
-      🇪🇸 Spanje - 6 punten<br>
-      🇦🇷 Argentinië - 4 punten<br>
-      🇯🇵 Japan - 0 punten
+      🇳🇱 Nederland — 3 gespeeld — 7 punten<br>
+      🇪🇸 Spanje — 3 gespeeld — 6 punten<br>
+      🇦🇷 Argentinië — 3 gespeeld — 4 punten<br>
+      🇯🇵 Japan — 3 gespeeld — 0 punten
+    </div>
+
+    <div class="card">
+      <h2>🏆 Doorgang naar volgende ronde</h2>
+      ✅ België<br>
+      ✅ Frankrijk<br>
+      ✅ Nederland<br>
+      ✅ Spanje
     </div>
   `;
 }
-
 showHome();
