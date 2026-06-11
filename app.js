@@ -121,6 +121,117 @@ function showTeams() {
 app.innerHTML = `
 
 <div class="card">
+
+<h2>🇧🇪 België</h2>
+
+🏆 FIFA Ranking: Top 10
+
+<br><br>
+
+👔 Bondscoach:
+Rudi Garcia
+
+<br><br>
+
+⭐ Sterspelers:
+
+<br>
+
+⚽ Kevin De Bruyne
+
+<br>
+
+⚽ Romelu Lukaku
+
+<br>
+
+⚽ Jérémy Doku
+
+<br><br>
+
+<button onclick="setFavorite('België 🇧🇪')">
+⭐ Favoriet maken
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>🇫🇷 Frankrijk</h2>
+
+🏆 FIFA Ranking: Top 5
+
+<br><br>
+
+👔 Bondscoach:
+Didier Deschamps
+
+<br><br>
+
+⭐ Sterspelers:
+
+<br>
+
+⚽ Kylian Mbappé
+
+<br>
+
+⚽ Ousmane Dembélé
+
+<br>
+
+⚽ Eduardo Camavinga
+
+<br><br>
+
+<button onclick="setFavorite('Frankrijk 🇫🇷')">
+⭐ Favoriet maken
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>🇧🇷 Brazilië</h2>
+
+🏆 FIFA Ranking: Top 5
+
+<br><br>
+
+👔 Bondscoach:
+Carlo Ancelotti
+
+<br><br>
+
+⭐ Sterspelers:
+
+<br>
+
+⚽ Vinícius Júnior
+
+<br>
+
+⚽ Rodrygo
+
+<br>
+
+⚽ Marquinhos
+
+<br><br>
+
+<button onclick="setFavorite('Brazilië 🇧🇷')">
+⭐ Favoriet maken
+</button>
+
+</div>
+
+`;
+
+}
+
+app.innerHTML = `
+
+<div class="card">
 <h2>🇧🇪 België</h2>
 
 Bondscoach: Rudi Garcia
