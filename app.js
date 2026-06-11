@@ -404,6 +404,53 @@ function showNotifications() {
     </div>
   `;
 }
+function showLiveScores() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>🔴 Live Scores Center</h2>
+      Live wedstrijden, uitslagen en updates
+    </div>
+
+    <div class="card match-card">
+      <h2>🔴 LIVE</h2>
+      🇳🇱 Nederland
+      <div class="vs">1 - 1</div>
+      🇦🇷 Argentinië<br><br>
+      ⏱ Minuut 67<br>
+      ⚽ Laatste goal: Argentinië<br>
+      🏟 SoFi Stadium
+    </div>
+
+    <div class="card match-card">
+      <h2>🟢 GEPLAND</h2>
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇫🇷 Frankrijk<br><br>
+      📅 20 juni 2026<br>
+      🕘 21:00<br>
+      🏟 MetLife Stadium
+    </div>
+
+    <div class="card">
+      <h2>📊 Laatste uitslagen</h2>
+      🇧🇷 Brazilië 2 - 0 Japan 🇯🇵<br>
+      🇩🇪 Duitsland 1 - 1 Spanje 🇪🇸<br>
+      🇧🇪 België 3 - 1 Canada 🇨🇦
+    </div>
+
+    <div class="card">
+      <h2>⚽ Doelpuntenoverzicht</h2>
+      12’ Nederland 1 - 0 Argentinië<br>
+      67’ Argentinië 1 - 1 Nederland<br>
+      74’ LIVE: wedstrijd bezig
+    </div>
+
+    <div class="card">
+      <h2>🚀 Later uitbreidbaar</h2>
+      Deze pagina is klaar om later echte live scores via een voetbal-API te tonen.
+    </div>
+  `;
+}
 showHome();
 function showNews() {
   app.innerHTML = `
