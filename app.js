@@ -277,4 +277,50 @@ function showStandings() {
   `;
 }
 
+function showKnockout() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>🏆 Knock-out Center</h2>
+      Weg naar de wereldbeker
+    </div>
+
+    <div class="card match-card">
+      <h2>🏆 Achtste Finale</h2>
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇯🇵 Japan<br><br>
+      📅 30 juni 2026<br>
+      🏟 MetLife Stadium
+    </div>
+
+    <div class="card match-card">
+      <h2>🏆 Kwartfinale</h2>
+      🇫🇷 Frankrijk
+      <div class="vs">VS</div>
+      🇳🇱 Nederland<br><br>
+      📅 5 juli 2026<br>
+      🏟 Estadio Azteca
+    </div>
+
+    <div class="card match-card">
+      <h2>🏆 Halve Finale</h2>
+      🇧🇷 Brazilië
+      <div class="vs">VS</div>
+      🇩🇪 Duitsland<br><br>
+      📅 10 juli 2026<br>
+      🏟 BC Place
+    </div>
+
+    <div class="card match-card">
+      <h2>🏆 Finale</h2>
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇧🇷 Brazilië<br><br>
+      📅 19 juli 2026<br>
+      🏟 MetLife Stadium<br><br>
+      🏆 Winnaar wordt wereldkampioen
+    </div>
+  `;
+}
+
 showHome();
