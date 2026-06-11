@@ -220,39 +220,6 @@ Carlo Ancelotti
 
 }
 
-function showStadiums(){
-
-app.innerHTML = `
-
-<div class="card">
-
-<h2>🏟 MetLife Stadium</h2>
-
-📍 New Jersey, USA
-
-<br><br>
-
-👥 Capaciteit: 82.500
-
-</div>
-
-<div class="card">
-
-<h2>🏟 Estadio Azteca</h2>
-
-📍 Mexico-Stad
-
-<br><br>
-
-👥 Capaciteit: 87.500
-
-</div>
-
-</div>
-
-`;
-
-}
 
 function showStandings(){
 
@@ -265,7 +232,55 @@ app.innerHTML = `
 1. België - 6 ptn<br>
 2. Frankrijk - 4 ptn<br>
 3. Brazilië - 3 ptn<br>
-4. Duitsland - 1 ptn
+4. Duitslanfunction showStadiums(){
+
+app.innerHTML = `
+
+<div class="card">
+<h2>🏟 MetLife Stadium</h2>
+
+📍 East Rutherford, New Jersey<br>
+🌍 Verenigde Staten<br>
+👥 Capaciteit: ongeveer 82.500<br>
+🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/New_York" })}
+
+<br><br>
+
+Het MetLife Stadium is gepland als stadion voor de WK-finale van 2026.
+
+</div>
+
+<div class="card">
+<h2>🏟 Estadio Azteca</h2>
+
+📍 Mexico-Stad<br>
+🌍 Mexico<br>
+👥 Capaciteit: ongeveer 87.500<br>
+🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Mexico_City" })}
+
+<br><br>
+
+Een legendarisch stadion waar al meerdere historische WK-wedstrijden gespeeld zijn.
+
+</div>
+
+<div class="card">
+<h2>🏟 BC Place</h2>
+
+📍 Vancouver<br>
+🌍 Canada<br>
+👥 Capaciteit: ongeveer 54.000<br>
+🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Vancouver" })}
+
+<br><br>
+
+Een modern stadion in Canada, gebruikt voor grote internationale sportevenementen.
+
+</div>
+
+`;
+
+}d - 1 ptn
 
 </div>
 
