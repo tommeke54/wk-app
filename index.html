@@ -4,187 +4,241 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WK App Live Pro</title>
+<title>WorldCup Live Pro</title>
+
+<link rel="manifest" href="manifest.json">
 
 <style>
-body{
-font-family:Arial;
+
+*{
 margin:0;
-background:linear-gradient(135deg,#06142e,#0b1d3a);
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, sans-serif;
+background:#06142e;
 color:white;
+min-height:100vh;
 }
 
-header{
-text-align:center;
-padding:20px;
-font-size:26px;
-font-weight:bold;
+.header{
+background:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600') center/cover;
+height:240px;
+position:relative;
 }
 
-#clock{
-text-align:center;
-padding:10px;
-font-size:16px;
-}
-
-.menu{
+.overlay{
+background:rgba(0,0,0,0.55);
+height:100%;
 display:flex;
-flex-wrap:wrap;
+flex-direction:column;
 justify-content:center;
+align-items:center;
+}
+
+.logo{
+font-size:34px;
+font-weight:bold;
+color:#f4c542;
+}
+
+.slogan{
+margin-top:10px;
+font-size:15px;
+}
+
+.flags{
+display:flex;
 gap:10px;
-padding:10px;
-}
-
-button{
-background:#1e90ff;
-border:none;
-color:white;
-padding:10px 14px;
-border-radius:8px;
-cursor:pointer;
-font-size:14px;
-}
-
-button:hover{
-opacity:0.9;
+margin-top:15px;
+font-size:28px;
 }
 
 .container{
 padding:15px;
-max-width:900px;
-margin:auto;
+padding-bottom:90px;
 }
 
 .card{
 background:rgba(255,255,255,0.08);
-padding:12px;
+border-radius:15px;
+padding:15px;
+margin-bottom:15px;
+backdrop-filter:blur(8px);
+}
+
+.card-title{
+font-size:18px;
+font-weight:bold;
+margin-bottom:10px;
+color:#f4c542;
+}
+
+.match{
+font-size:20px;
+font-weight:bold;
+}
+
+.countdown{
+font-size:28px;
+font-weight:bold;
+text-align:center;
 margin-top:10px;
-border-radius:10px;
-border-left:4px solid #1e90ff;
 }
 
-.live{
-border-left:4px solid red;
+.news{
+line-height:1.8;
 }
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:70px;
+background:#0d2345;
+display:flex;
+justify-content:space-around;
+align-items:center;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.nav-btn{
+text-align:center;
+cursor:pointer;
+font-size:13px;
+}
+
+.nav-icon{
+font-size:22px;
+display:block;
+margin-bottom:4px;
+}
+
 </style>
-
 </head>
 
 <body>
 
-<header>🏆 WK LIVE PRO</header>
+<div class="header">
+<div class="overlay">
 
-<div id="clock"></div>
+<div class="logo">
+🏆 WorldCup Live Pro
+</div>
 
-<div class="menu">
-<button onclick="home()">🏠 Home</button>
-<button onclick="wedstrijden()">⚽ Wedstrijden</button>
-<button onclick="spelers()">👥 Spelers</button>
-<button onclick="stadions()">🏟 Stadions</button>
+<div class="slogan">
+Alle WK-informatie op één plek
+</div>
+
+<div class="flags">
+🇧🇪 🇧🇷 🇫🇷 🇩🇪 🇦🇷 🇪🇸 🇳🇱 🇯🇵
+</div>
+
+</div>
 </div>
 
 <div class="container">
-<div id="content"></div>
+
+<div class="card">
+<div class="card-title">⚽ Volgende wedstrijd</div>
+
+<div class="match">
+België 🇧🇪 vs Frankrijk 🇫🇷
+</div>
+
+<div>
+20 juni 2026 - 21:00
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">⏳ Countdown</div>
+
+<div class="countdown" id="countdown">
+Laden...
+</div>
+</div>
+
+<div class="card">
+<div class="card-title">⭐ Favoriet team</div>
+
+België 🇧🇪
+</div>
+
+<div class="card">
+<div class="card-title">📰 Laatste WK Nieuws</div>
+
+<div class="news">
+• WK voorbereiding volop bezig<br>
+• Nieuwe stadions klaar voor gebruik<br>
+• Favorieten voor de wereldtitel bekend
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom-nav">
+
+<div class="nav-btn">
+<span class="nav-icon">🏠</span>
+Home
+</div>
+
+<div class="nav-btn">
+<span class="nav-icon">⚽</span>
+Wedstrijden
+</div>
+
+<div class="nav-btn">
+<span class="nav-icon">👥</span>
+Teams
+</div>
+
+<div class="nav-btn">
+<span class="nav-icon">🏟</span>
+Stadions
+</div>
+
+<div class="nav-btn">
+<span class="nav-icon">📊</span>
+Standen
+</div>
+
 </div>
 
 <script>
 
-// CLOCK
-function updateClock(){
-document.getElementById("clock").innerHTML =
-"🕒 België: " + new Date().toLocaleTimeString("nl-BE");
-}
-setInterval(updateClock,1000);
-updateClock();
+const targetDate =
+new Date("June 20, 2026 21:00:00").getTime();
 
-// HOME
-function home(){
-document.getElementById("content").innerHTML=`
-<div class="card">
-Welkom bij WK Live Pro ⚽
-</div>
-<div class="card">
-Klik op Wedstrijden voor live of WK data.
-</div>
-`;
-}
+setInterval(() => {
 
-// WEDSTRIJDEN (LIVE + FALLBACK)
-function wedstrijden(){
+const now = new Date().getTime();
 
-document.getElementById("content").innerHTML =
-`<div class="card">⏳ Data laden...</div>`;
+const distance = targetDate - now;
 
-fetch("https://www.thesportsdb.com/api/v1/json/3/livescore.php?s=Soccer")
-.then(r=>r.json())
-.then(data=>{
+const days =
+Math.floor(distance / (1000*60*60*24));
 
-let html="";
+const hours =
+Math.floor((distance % (1000*60*60*24))
+/ (1000*60*60));
 
-if(data.events && data.events.length>0){
+const minutes =
+Math.floor((distance % (1000*60*60))
+/ (1000*60));
 
-html += `<div class="card live"><b>🔴 LIVE WEDSTRIJDEN</b></div>`;
+document.getElementById("countdown")
+.innerHTML =
+days + "d " +
+hours + "u " +
+minutes + "m";
 
-data.events.forEach(m=>{
-html += `
-<div class="card live">
-⚽ <b>${m.strHomeTeam}</b> ${m.intHomeScore ?? 0} - ${m.intAwayScore ?? 0} <b>${m.strAwayTeam}</b><br>
-🏟 ${m.strVenue || "Onbekend"}<br>
-📍 ${m.strCity || ""}
-</div>
-`;
-});
-
-}else{
-
-let wk = [
-"Mexico vs Zuid-Afrika",
-"Canada vs Italië",
-"Brazilië vs Japan",
-"Frankrijk vs Nigeria",
-"Duitsland vs USA"
-];
-
-html += `<div class="card"><b>🏆 WK Schema</b></div>`;
-
-wk.forEach(m=>{
-html += `<div class="card">⚽ ${m}</div>`;
-});
-
-}
-
-document.getElementById("content").innerHTML=html;
-
-})
-.catch(()=>{
-
-document.getElementById("content").innerHTML=
-`<div class="card">❌ Geen data beschikbaar</div>`;
-
-});
-
-}
-
-// SPELERS
-function spelers(){
-document.getElementById("content").innerHTML=`
-<div class="card">🇧🇪 De Bruyne</div>
-<div class="card">🇧🇪 Lukaku</div>
-<div class="card">🇫🇷 Mbappé</div>
-<div class="card">🇧🇷 Vinícius</div>
-`;
-}
-
-// STADIONS
-function stadions(){
-document.getElementById("content").innerHTML=`
-<div class="card">🏟 MetLife Stadium (USA)</div>
-<div class="card">🏟 Estadio Azteca (Mexico)</div>
-<div class="card">🏟 BC Place (Canada)</div>
-`;
-}
-
-home();
+},1000);
 
 </script>
 
