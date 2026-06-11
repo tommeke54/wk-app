@@ -11,10 +11,7 @@ html{
 body{
   font-family:'Segoe UI', Arial, sans-serif;
   background:
-    linear-gradient(
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.82)
-    ),
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.85)),
     url('https://images.unsplash.com/photo-1556056504-5c7696c4c28d?q=80&w=2000');
   background-size:cover;
   background-position:center;
@@ -23,14 +20,10 @@ body{
   min-height:100vh;
 }
 
-/* HEADER / HERO */
 .hero{
-  height:330px;
+  height:350px;
   background:
-    linear-gradient(
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.75)
-    ),
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
     url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000');
   background-size:cover;
   background-position:center;
@@ -47,14 +40,26 @@ body{
   padding:20px;
 }
 
+.cup{
+  font-size:82px;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 22px gold);
+  animation:floatCup 3s ease-in-out infinite;
+}
+
+@keyframes floatCup{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
 .hero h1{
   color:#f4c542;
   font-size:46px;
   font-weight:900;
   text-shadow:
-    0 0 15px rgba(244,197,66,.7),
-    0 4px 12px rgba(0,0,0,.7);
-  letter-spacing:.5px;
+    0 0 18px rgba(244,197,66,.8),
+    0 4px 12px rgba(0,0,0,.8);
 }
 
 .hero p{
@@ -64,19 +69,19 @@ body{
 }
 
 .flags{
-  margin-top:18px;
-  font-size:30px;
+  margin-top:20px;
+  font-size:32px;
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:12px;
-  padding:8px 14px;
-  background:rgba(0,0,0,.25);
-  border-radius:999px;
-  backdrop-filter:blur(8px);
+  padding:12px 20px;
+  background:rgba(0,0,0,.35);
+  border-radius:50px;
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(10px);
 }
 
-/* CONTENT */
 #appContent{
   padding:20px;
   padding-bottom:105px;
@@ -84,7 +89,6 @@ body{
   margin:auto;
 }
 
-/* CARDS */
 .card{
   background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.16);
@@ -103,7 +107,6 @@ body{
   font-size:21px;
 }
 
-/* MATCH CARDS */
 .match-card{
   text-align:center;
 }
@@ -116,7 +119,6 @@ body{
   text-shadow:0 0 12px rgba(244,197,66,.55);
 }
 
-/* BUTTONS */
 button{
   background:linear-gradient(135deg,#1e90ff,#006bd6);
   color:white;
@@ -132,7 +134,6 @@ button:active{
   transform:scale(.96);
 }
 
-/* BOTTOM NAV */
 .bottom-nav{
   position:fixed;
   bottom:0;
@@ -171,10 +172,13 @@ button:active{
   margin-top:4px;
 }
 
-/* MOBILE */
 @media(max-width:600px){
   .hero{
-    height:300px;
+    height:330px;
+  }
+
+  .cup{
+    font-size:68px;
   }
 
   .hero h1{
