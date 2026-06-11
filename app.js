@@ -394,3 +394,59 @@ function showNews() {
     </div>
   `;
 }
+function showBelgium() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>🇧🇪 België Center</h2>
+      Alles over de Rode Duivels op het WK
+    </div>
+
+    <div class="card">
+      <h2>👔 Bondscoach</h2>
+      Rudi Garcia
+    </div>
+
+    <div class="card">
+      <h2>⭐ Sterspelers</h2>
+      ⚽ Kevin De Bruyne<br>
+      ⚽ Romelu Lukaku<br>
+      ⚽ Jérémy Doku<br>
+      ⚽ Youri Tielemans<br>
+      ⚽ Thibaut Courtois
+    </div>
+
+    <div class="card match-card">
+      <h2>⚽ Volgende wedstrijd België</h2>
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇫🇷 Frankrijk<br><br>
+      📅 20 juni 2026<br>
+      🕘 21:00<br>
+      🏟 MetLife Stadium
+    </div>
+
+    <div class="card">
+      <h2>📊 België Statistieken</h2>
+      Groep: Groep A<br>
+      Punten: 7<br>
+      Gespeeld: 3<br>
+      Gewonnen: 2<br>
+      Gelijk: 1<br>
+      Verloren: 0
+    </div>
+
+    <div class="card">
+      <h2>🏆 WK Historiek België</h2>
+      Beste resultaat: 3e plaats op WK 2018<br>
+      Bekend als: De Rode Duivels<br>
+      Supporterskleur: Rood
+    </div>
+
+    <div class="card">
+      <h2>📰 België Nieuws</h2>
+      • België bereidt zich voor op de topper tegen Frankrijk<br>
+      • De sterspelers zijn klaar voor de groepsfase<br>
+      • Supporters dromen van een sterk WK
+    </div>
+  `;
+}
