@@ -356,7 +356,54 @@ function showKnockout() {
     </div>
   `;
 }
+function showNotifications() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>🔔 Meldingen Center</h2>
+      Persoonlijke herinneringen voor het WK
+    </div>
 
+    <div class="card">
+      <h2>🇧🇪 België</h2>
+      Volgende wedstrijd:
+      België vs Frankrijk
+
+      <br><br>
+
+      📅 20 juni 2026
+      <br>
+      🕘 21:00
+    </div>
+
+    <div class="card">
+      <h2>⏰ Herinneringen</h2>
+
+      ✅ 1 dag vooraf<br>
+      ✅ 1 uur vooraf<br>
+      ✅ Bij aftrap<br>
+      ✅ Bij knock-out wedstrijden
+    </div>
+
+    <div class="card">
+      <h2>🏆 Favoriete ploeg</h2>
+
+      ${favoriteTeam}
+
+      <br><br>
+
+      Meldingen zullen gekoppeld worden aan je favoriete ploeg.
+    </div>
+
+    <div class="card">
+      <h2>📢 Toekomstige functies</h2>
+
+      🔔 Pushmeldingen<br>
+      ⚽ Doelpuntmeldingen<br>
+      📰 Breaking WK-nieuws<br>
+      🇧🇪 Belgische wedstrijdalerts
+    </div>
+  `;
+}
 showHome();
 function showNews() {
   app.innerHTML = `
