@@ -51,29 +51,7 @@ function showHome() {
   `;
 }
 
-function showMatches() {
-  app.innerHTML = `
-    <div class="card match-card">
-      <h2>⚽ Wedstrijd 1</h2>
-      🇧🇪 België
-      <div class="vs">VS</div>
-      🇫🇷 Frankrijk<br><br>
-      📅 20 juni 2026<br>
-      🕘 21:00<br>
-      🏟 MetLife Stadium
-    </div>
 
-    <div class="card match-card">
-      <h2>⚽ Wedstrijd 2</h2>
-      🇧🇷 Brazilië
-      <div class="vs">VS</div>
-      🇯🇵 Japan<br><br>
-      📅 21 juni 2026<br>
-      🕘 18:00<br>
-      🏟 Estadio Azteca
-    </div>
-  `;
-}
 
 function showTeams() {
   app.innerHTML = `
@@ -95,7 +73,57 @@ function showTeams() {
       <h2>🇫🇷 Frankrijk</h2>
       🏆 FIFA Ranking: Top 5<br>
       📌 Groep: Groep A<br>
-      👔 Bondscoach: Didier Deschamps<br>
+      👔 function showMatches() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>⚽ WK 2026 Wedstrijden</h2>
+      Professioneel wedstrijdschema
+    </div>
+
+    <div class="card match-card">
+      <h2>🟢 GEPLAND</h2>
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇫🇷 Frankrijk<br><br>
+      📅 20 juni 2026<br>
+      🕘 21:00<br>
+      🏟 MetLife Stadium<br>
+      🌍 New Jersey, Verenigde Staten
+    </div>
+
+    <div class="card match-card">
+      <h2>🟢 GEPLAND</h2>
+      🇧🇷 Brazilië
+      <div class="vs">VS</div>
+      🇯🇵 Japan<br><br>
+      📅 21 juni 2026<br>
+      🕘 18:00<br>
+      🏟 Estadio Azteca<br>
+      🌍 Mexico-Stad, Mexico
+    </div>
+
+    <div class="card match-card">
+      <h2>🟡 BINNENKORT</h2>
+      🇩🇪 Duitsland
+      <div class="vs">VS</div>
+      🇪🇸 Spanje<br><br>
+      📅 22 juni 2026<br>
+      🕘 20:00<br>
+      🏟 BC Place<br>
+      🌍 Vancouver, Canada
+    </div>
+
+    <div class="card match-card">
+      <h2>🔴 LIVE DEMO</h2>
+      🇳🇱 Nederland
+      <div class="vs">1 - 1</div>
+      🇦🇷 Argentinië<br><br>
+      ⏱ Minuut 67<br>
+      🏟 SoFi Stadium<br>
+      🌍 Los Angeles, Verenigde Staten
+    </div>
+  `;
+}Bondscoach: Didier Deschamps<br>
       📊 Gemiddelde leeftijd: ±26 jaar<br><br>
       ⭐ Sterspelers<br><br>
       ⚽ Kylian Mbappé<br>
