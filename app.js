@@ -211,13 +211,93 @@ function showStadiums() {
 function showStandings() {
   app.innerHTML = `
     <div class="card">
+      <h2>📊 WK 2026 Standen</h2>
+      Groepsfase overzicht
+    </div>
+
+    <div class="card">
       <h2>📊 Groep A</h2>
-      1. België - 6 ptn<br>
-      2. Frankrijk - 4 ptn<br>
-      3. Brazilië - 3 ptn<br>
-      4. Duitsland - 1 ptn
+
+      <table class="standings-table">
+        <tr>
+          <th>Ploeg</th>
+          <th>W</th>
+          <th>G</th>
+          <th>V</th>
+          <th>Ptn</th>
+        </tr>
+        <tr>
+          <td>🇧🇪 België</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>🇫🇷 Frankrijk</td>
+          <td>2</td>
+          <td>0</td>
+          <td>1</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>🇧🇷 Brazilië</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>🇩🇪 Duitsland</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>📊 Groep B</h2>
+
+      <table class="standings-table">
+        <tr>
+          <th>Ploeg</th>
+          <th>W</th>
+          <th>G</th>
+          <th>V</th>
+          <th>Ptn</th>
+        </tr>
+        <tr>
+          <td>🇳🇱 Nederland</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>🇪🇸 Spanje</td>
+          <td>2</td>
+          <td>0</td>
+          <td>1</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>🇦🇷 Argentinië</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>🇯🇵 Japan</td>
+          <td>0</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+        </tr>
+      </table>
     </div>
   `;
 }
-
 showHome();
