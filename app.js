@@ -357,3 +357,39 @@ function showKnockout() {
 }
 
 showHome();
+function showNews() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>📰 WK Nieuws Center</h2>
+      Laatste updates rond het WK voetbal
+    </div>
+
+    <div class="card">
+      <h2>🇧🇪 België Nieuws</h2>
+      • België bereidt zich voor op de topwedstrijd tegen Frankrijk<br>
+      • De bondscoach werkt verder aan zijn ideale basiself<br>
+      • Supporters kijken uit naar een sterk WK
+    </div>
+
+    <div class="card">
+      <h2>🌍 Wereldnieuws WK</h2>
+      • Stadions in de Verenigde Staten, Mexico en Canada worden klaargemaakt<br>
+      • Toplanden bereiden zich voor op de groepsfase<br>
+      • De verwachtingen rond Brazilië, Frankrijk en Argentinië blijven hoog
+    </div>
+
+    <div class="card">
+      <h2>🏟 Stadionnieuws</h2>
+      • MetLife Stadium wordt klaargemaakt voor grote WK-wedstrijden<br>
+      • Estadio Azteca blijft één van de meest iconische WK-stadions<br>
+      • BC Place ontvangt internationale wedstrijden in Canada
+    </div>
+
+    <div class="card">
+      <h2>⚽ Spelers in de kijker</h2>
+      • Kevin De Bruyne blijft belangrijk voor België<br>
+      • Kylian Mbappé is één van de blikvangers van Frankrijk<br>
+      • Vinícius Júnior wordt verwacht als sterspeler bij Brazilië
+    </div>
+  `;
+}
