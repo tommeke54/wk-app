@@ -165,6 +165,7 @@ function showTeams() {
 }
 
 function showPlayers(countryName) {
+
   const team = teamsData.find(t => t.name === countryName);
   const countryPlayers = playersData.find(p => p.country === countryName);
 
@@ -178,46 +179,54 @@ function showPlayers(countryName) {
   `;
 
   if (!countryPlayers) {
+
     html += `
       <div class="card">
         Voor dit land zijn nog geen spelers toegevoegd.
       </div>
     `;
+
   } else {
+
     countryPlayers.players.forEach(player => {
 
-  html += `
-    <div class="card">
+      html += `
+        <div class="card">
 
-      <h2>⚽ ${player.name}</h2>
+          <h2>⚽ ${player.name}</h2>
 
-      📸 Spelersfoto volgt later
+          📸 Spelersfoto volgt later
 
-      <br><br>
+          <br><br>
 
-      🔢 Rugnummer: ${player.number || "-"}
+          🔢 Rugnummer: ${player.number || "-"}
 
-      <br>
+          <br>
 
-      🎂 Leeftijd: ${player.age || "-"}
+          🎂 Leeftijd: ${player.age || "-"}
 
-      <br>
+          <br>
 
-      ⚽ Positie: ${player.position}
+          ⚽ Positie: ${player.position}
 
-      <br>
+          <br>
 
-      🏟 Club: ${player.club}
+          🏟 Club: ${player.club}
 
-      <br><br>
+          <br><br>
 
-      ${player.star ? "⭐ Sterspeler" : ""}
+          ${player.star ? "⭐ Sterspeler" : ""}
 
-    </div>
-  `;
+        </div>
+      `;
 
-});
+    });
+
+  }
+
   app.innerHTML = html;
+
+}
 }
 function showStadiums() {
   app.innerHTML = `
