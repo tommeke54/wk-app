@@ -138,8 +138,8 @@ function showMatches() {
 function showTeams() {
   let html = `
     <div class="card">
-      <h2>🌍 Alle WK-landen</h2>
-      Overzicht van alle landen uit data-teams.js
+      <h2>🌍 Alle WK-landen & Spelers</h2>
+      Klik op een land om de spelers te bekijken.
     </div>
   `;
 
@@ -149,15 +149,51 @@ function showTeams() {
         <h2>${team.flag} ${team.name}</h2>
         📌 Groep: ${team.group}<br>
         👔 Bondscoach: ${team.coach}<br><br>
-        ⭐ Sterspelers<br><br>
-        ${team.stars.map(star => `⚽ ${star}<br>`).join("")}
-        <br>
+
         <button onclick="setFavorite('${team.name} ${team.flag}')">
           ⭐ Favoriet maken
+        </button>
+
+        <button onclick="showPlayers('${team.name}')">
+          👥 Bekijk spelers
         </button>
       </div>
     `;
   });
+
+  app.innerHTML = html;
+}
+
+function showPlayers(countryName) {
+  const team = teamsData.find(t => t.name === countryName);
+  const countryPlayers = playersData.find(p => p.country === countryName);
+
+  let html = `
+    <div class="card">
+      <h2>${team ? team.flag : ""} ${countryName}</h2>
+      Spelersinformatie
+      <br><br>
+      <button onclick="showTeams()">⬅ Terug naar landen</button>
+    </div>
+  `;
+
+  if (!countryPlayers) {
+    html += `
+      <div class="card">
+        Voor dit land zijn nog geen spelers toegevoegd.
+      </div>
+    `;
+  } else {
+    countryPlayers.players.forEach(player => {
+      html += `
+        <div class="card">
+          <h2>⚽ ${player.name}</h2>
+          Positie: ${player.position}<br>
+          Club: ${player.club}
+        </div>
+      `;
+    });
+  }
 
   app.innerHTML = html;
 }
