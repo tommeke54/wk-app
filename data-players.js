@@ -107,6 +107,62 @@ const playersData = [
   star: false,
   description: "Moderne verdediger met aanvallende kwaliteiten."
 } 
+,
+{
+  name: "Zeno Debast",
+  number: 2,
+  age: 22,
+  position: "Verdediger",
+  club: "Sporting CP",
+  foot: "Rechts",
+  role: "Opbouwende verdediger",
+  star: false,
+  description: "Jonge centrale verdediger met een goede passing."
+},
+{
+  name: "Timothy Castagne",
+  number: 21,
+  age: 30,
+  position: "Verdediger",
+  club: "Fulham",
+  foot: "Rechts",
+  role: "Wingback",
+  star: false,
+  description: "Veelzijdige flankverdediger met veel ervaring."
+},
+{
+  name: "Dodi Lukebakio",
+  number: 14,
+  age: 28,
+  position: "Vleugelspeler",
+  club: "Sevilla",
+  foot: "Links",
+  role: "Dribbelaar",
+  star: false,
+  description: "Snelle aanvaller met een sterk één-tegen-één spel."
+},
+{
+  name: "Johan Bakayoko",
+  number: 19,
+  age: 22,
+  position: "Vleugelspeler",
+  club: "PSV",
+  foot: "Links",
+  role: "Aanvallende flankspeler",
+  star: false,
+  description: "Technische vleugelspeler met veel snelheid."
+},
+{
+  name: "Matz Sels",
+  number: 13,
+  age: 33,
+  position: "Doelman",
+  club: "Nottingham Forest",
+  foot: "Rechts",
+  role: "Reservekeeper",
+  star: false,
+  description: "Ervaren doelman en betrouwbare back-up."
+}
  ]
   },
 
