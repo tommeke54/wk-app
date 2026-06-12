@@ -138,29 +138,20 @@ function showPlayers(countryName) {
     countryPlayers.players.forEach(player => {
       html += `
         <div class="card">
-          <h2>⚽ ${player.name}</h2>
+     <h2>⚽ ${player.name}</h2>
 
-          ${player.photo ? `
-            <img src="${player.photo}"
-     style="
-     width:100%;
-     max-width:320px;
-     border-radius:15px;
-     margin-bottom:10px;
-     border:3px solid gold;
-     ">
-          ` : "📸 Geen foto"}
+🔢 Rugnummer: ${player.number || "-"}<br>
+🎂 Leeftijd: ${player.age || "-"}<br>
+⚽ Positie: ${player.position}<br>
+🏟 Club: ${player.club}<br>
+🦶 Voet: ${player.foot || "-"}<br>
+🎯 Rol: ${player.role || "-"}<br><br>
 
-          <br><br>
-          🔢 Rugnummer: ${player.number || "-"}<br>
-          🎂 Leeftijd: ${player.age || "-"}<br>
-          ⚽ Positie: ${player.position}<br>
-          🏟 Club: ${player.club}<br><br>
-          ${player.star ? "⭐ Sterspeler" : ""}
-        </div>
-      `;
-    });
-  }
+${player.description ? `
+📝 ${player.description}<br><br>
+` : ""}
+
+${player.star ? "⭐ Sterspeler" : ""}     
 
   app.innerHTML = html;
 }
