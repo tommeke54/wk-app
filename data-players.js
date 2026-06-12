@@ -1,44 +1,43 @@
 const playersData = [
 
   // BELGIË
- {
-  country: "België",
-  players: [
-   {
-  name: "Kevin De Bruyne",
-  number: 7,
-  age: 34,
-  position: "Middenvelder",
-  club: "Manchester City",
-  star: true,
-  photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Kevin_De_Bruyne_201807091.jpg/320px-Kevin_De_Bruyne_201807091.jpg"
-}, 
-    {
-      name: "Romelu Lukaku",
-      number: 10,
-      age: 33,
-      position: "Aanvaller",
-      club: "Napoli",
-      star: true
-    },
-    {
-      name: "Jérémy Doku",
-      number: 22,
-      age: 24,
-      position: "Vleugelspeler",
-      club: "Manchester City",
-      star: true
-    },
-    {
-      name: "Thibaut Courtois",
-      number: 1,
-      age: 34,
-      position: "Doelman",
-      club: "Real Madrid",
-      star: true
-    }
-  ]
-}
+  {
+    country: "België",
+    players: [
+      {
+        name: "Kevin De Bruyne",
+        number: 7,
+        age: 34,
+        position: "Middenvelder",
+        club: "Manchester City",
+        star: true,
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Kevin_De_Bruyne_201807091.jpg/320px-Kevin_De_Bruyne_201807091.jpg"
+      },
+      {
+        name: "Romelu Lukaku",
+        number: 10,
+        age: 33,
+        position: "Aanvaller",
+        club: "Napoli",
+        star: true
+      },
+      {
+        name: "Jérémy Doku",
+        number: 22,
+        age: 24,
+        position: "Vleugelspeler",
+        club: "Manchester City",
+        star: true
+      },
+      {
+        name: "Thibaut Courtois",
+        number: 1,
+        age: 34,
+        position: "Doelman",
+        club: "Real Madrid",
+        star: true
+      }
+    ]
   },
 
   // FRANKRIJK
