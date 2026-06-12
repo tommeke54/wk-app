@@ -305,33 +305,46 @@ function showStadiums() {
   `;
 }
 function showKnockout() {
-  app.innerHTML = `
+  let html = `
     <div class="card">
       <h2>🏆 Knock-out Center Pro</h2>
-      De weg naar de wereldbeker
-    </div>
-
-    <div class="card match-card">
-      <h2>🏆 Achtste Finales</h2>
-      🇧🇪 België
-      <div class="vs">VS</div>
-      🇯🇵 Japan<br><br>
-      🇫🇷 Frankrijk
-      <div class="vs">VS</div>
-      🇺🇸 Verenigde Staten
-    </div>
-
-    <div class="card match-card">
-      <h2>🏆 Finale</h2>
-      🇧🇪 België
-      <div class="vs">VS</div>
-      🇧🇷 Brazilië<br><br>
-      📅 19 juli 2026<br>
-      🏟 MetLife Stadium
+      Knock-outfase geladen uit data-knockout.js
     </div>
   `;
-}
 
+  knockoutData.forEach(round => {
+    html += `
+      <div class="card">
+        <h2>🏆 ${round.round}</h2>
+    `;
+
+    round.matches.forEach(match => {
+      html += `
+        <div class="match-card">
+          <h2>${match.status}</h2>
+
+          ${match.home}
+          <div class="vs">${match.score}</div>
+          ${match.away}
+
+          <br><br>
+
+          📅 ${match.date}<br>
+          🕘 Belgische tijd: ${match.timeBE}<br>
+          🏟 ${match.stadium}
+
+          <br><br>
+        </div>
+      `;
+    });
+
+    html += `
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
+}
 function showNews() {
   app.innerHTML = `
     <div class="card">
