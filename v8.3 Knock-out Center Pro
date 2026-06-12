@@ -1,0 +1,81 @@
+const knockoutData = [
+  {
+    round: "1/16 finales",
+    matches: [
+      {
+        status: "Nog te bepalen",
+        date: "Nog te bepalen",
+        timeBE: "-",
+        home: "Winnaar Groep A",
+        away: "Derde plaats Groep C/D/E",
+        score: "VS",
+        stadium: "Nog te bepalen"
+      },
+      {
+        status: "Nog te bepalen",
+        date: "Nog te bepalen",
+        timeBE: "-",
+        home: "Winnaar Groep B",
+        away: "Derde plaats Groep F/G/H",
+        score: "VS",
+        stadium: "Nog te bepalen"
+      }
+    ]
+  },
+  {
+    round: "Achtste finales",
+    matches: [
+      {
+        status: "Nog te bepalen",
+        date: "Nog te bepalen",
+        timeBE: "-",
+        home: "Winnaar 1/16 finale",
+        away: "Winnaar 1/16 finale",
+        score: "VS",
+        stadium: "Nog te bepalen"
+      }
+    ]
+  },
+  {
+    round: "Kwartfinales",
+    matches: [
+      {
+        status: "Nog te bepalen",
+        date: "Nog te bepalen",
+        timeBE: "-",
+        home: "Winnaar achtste finale",
+        away: "Winnaar achtste finale",
+        score: "VS",
+        stadium: "Nog te bepalen"
+      }
+    ]
+  },
+  {
+    round: "Halve finales",
+    matches: [
+      {
+        status: "Nog te bepalen",
+        date: "Nog te bepalen",
+        timeBE: "-",
+        home: "Winnaar kwartfinale",
+        away: "Winnaar kwartfinale",
+        score: "VS",
+        stadium: "Nog te bepalen"
+      }
+    ]
+  },
+  {
+    round: "Finale",
+    matches: [
+      {
+        status: "Gepland",
+        date: "19 juli 2026",
+        timeBE: "Nog te bepalen",
+        home: "Finalist 1",
+        away: "Finalist 2",
+        score: "VS",
+        stadium: "New York New Jersey Stadium"
+      }
+    ]
+  }
+];
