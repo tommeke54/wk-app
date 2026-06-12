@@ -69,7 +69,10 @@ function showHome() {
 
 function showMatches() {
   app.innerHTML = `
-    <div class="card"><h2>⚽ WK 2026 Wedstrijden</h2>Professioneel wedstrijdschema</div>
+    <div class="card">
+      <h2>⚽ WK 2026 Wedstrijden</h2>
+      Professioneel wedstrijdschema
+    </div>
 
     <div class="card match-card">
       <h2>🟢 GEPLAND</h2>
@@ -90,6 +93,35 @@ function showMatches() {
       🏟 SoFi Stadium
     </div>
   `;
+}
+
+function showTeams() {
+  let html = `
+    <div class="card">
+      <h2>🌍 Alle WK-landen & Spelers</h2>
+      Klik op een land om de spelers te bekijken.
+    </div>
+  `;
+
+  teamsData.forEach(team => {
+    html += `
+      <div class="card">
+        <h2>${team.flag} ${team.name}</h2>
+        📌 Groep: ${team.group}<br>
+        👔 Bondscoach: ${team.coach}<br><br>
+
+        <button onclick="setFavorite('${team.name} ${team.flag}')">
+          ⭐ Favoriet maken
+        </button>
+
+        <button onclick="showPlayers('${team.name}')">
+          👥 Bekijk spelers
+        </button>
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
 }
 
 function showPlayers(countryName) {
@@ -118,14 +150,12 @@ function showPlayers(countryName) {
 
           🔢 Rugnummer: ${player.number || "-"}<br>
           🎂 Leeftijd: ${player.age || "-"}<br>
-          ⚽ Positie: ${player.position}<br>
-          🏟 Club: ${player.club}<br>
+          ⚽ Positie: ${player.position || "-"}<br>
+          🏟 Club: ${player.club || "-"}<br>
           🦶 Voet: ${player.foot || "-"}<br>
           🎯 Rol: ${player.role || "-"}<br><br>
 
-          ${player.description ? `
-            📝 ${player.description}<br><br>
-          ` : ""}
+          ${player.description ? `📝 ${player.description}<br><br>` : ""}
 
           ${player.star ? "⭐ Sterspeler" : ""}
         </div>
@@ -136,49 +166,12 @@ function showPlayers(countryName) {
   app.innerHTML = html;
 }
 
-
-function showPlayers(countryName) {
-  const team = teamsData.find(t => t.name === countryName);
-  const countryPlayers = playersData.find(p => p.country === countryName);
-
-  let html = `
-    <div class="card">
-      <h2>${team ? team.flag : ""} ${countryName}</h2>
-      Spelersinformatie<br><br>
-      <button onclick="showTeams()">⬅ Terug naar landen</button>
-    </div>
-  `;
-
-  if (!countryPlayers) {
-    html += `
-      <div class="card">
-        Voor dit land zijn nog geen spelers toegevoegd.
-      </div>
-    `;
-  } else {
-    countryPlayers.players.forEach(player => {
-      html += `
-        <div class="card">
-     <h2>⚽ ${player.name}</h2>
-
-🔢 Rugnummer: ${player.number || "-"}<br>
-🎂 Leeftijd: ${player.age || "-"}<br>
-⚽ Positie: ${player.position}<br>
-🏟 Club: ${player.club}<br>
-🦶 Voet: ${player.foot || "-"}<br>
-🎯 Rol: ${player.role || "-"}<br><br>
-
-${player.description ? `
-📝 ${player.description}<br><br>
-` : ""}
-
-${player.star ? "⭐ Sterspeler" : ""}     
-
-  app.innerHTML = html;
-}
 function showStadiums() {
   app.innerHTML = `
-    <div class="card"><h2>🏟 Stadions Pro</h2>WK-stadions met lokale tijd.</div>
+    <div class="card">
+      <h2>🏟 Stadions Pro</h2>
+      WK-stadions met lokale tijd.
+    </div>
 
     <div class="card">
       <h2>🏟 MetLife Stadium</h2>
@@ -208,7 +201,10 @@ function showStadiums() {
 
 function showStandings() {
   app.innerHTML = `
-    <div class="card"><h2>📊 WK 2026 Standen Pro</h2>Groepsfase overzicht</div>
+    <div class="card">
+      <h2>📊 WK 2026 Standen Pro</h2>
+      Groepsfase overzicht
+    </div>
 
     <div class="card">
       <h2>📊 Groep A</h2>
@@ -230,12 +226,19 @@ function showStandings() {
 
 function showKnockout() {
   app.innerHTML = `
-    <div class="card"><h2>🏆 Knock-out Center Pro</h2>De weg naar de wereldbeker</div>
+    <div class="card">
+      <h2>🏆 Knock-out Center Pro</h2>
+      De weg naar de wereldbeker
+    </div>
 
     <div class="card match-card">
       <h2>🏆 Achtste Finales</h2>
-      🇧🇪 België <div class="vs">VS</div> 🇯🇵 Japan<br><br>
-      🇫🇷 Frankrijk <div class="vs">VS</div> 🇺🇸 Verenigde Staten
+      🇧🇪 België
+      <div class="vs">VS</div>
+      🇯🇵 Japan<br><br>
+      🇫🇷 Frankrijk
+      <div class="vs">VS</div>
+      🇺🇸 Verenigde Staten
     </div>
 
     <div class="card match-card">
@@ -251,7 +254,10 @@ function showKnockout() {
 
 function showNews() {
   app.innerHTML = `
-    <div class="card"><h2>📰 WK Nieuws Center</h2>Laatste updates rond het WK voetbal</div>
+    <div class="card">
+      <h2>📰 WK Nieuws Center</h2>
+      Laatste updates rond het WK voetbal
+    </div>
 
     <div class="card">
       <h2>🇧🇪 België Nieuws</h2>
@@ -269,7 +275,10 @@ function showNews() {
 
 function showBelgium() {
   app.innerHTML = `
-    <div class="card"><h2>🇧🇪 België Center</h2>Alles over de Rode Duivels op het WK</div>
+    <div class="card">
+      <h2>🇧🇪 België Center</h2>
+      Alles over de Rode Duivels op het WK
+    </div>
 
     <div class="card">
       <h2>⭐ Sterspelers</h2>
@@ -294,7 +303,10 @@ function showBelgium() {
 
 function showNotifications() {
   app.innerHTML = `
-    <div class="card"><h2>🔔 Meldingen Center</h2>Persoonlijke herinneringen voor het WK</div>
+    <div class="card">
+      <h2>🔔 Meldingen Center</h2>
+      Persoonlijke herinneringen voor het WK
+    </div>
 
     <div class="card">
       ✅ 1 dag vooraf<br>
@@ -307,7 +319,10 @@ function showNotifications() {
 
 function showLiveScores() {
   app.innerHTML = `
-    <div class="card"><h2>🔴 Live Scores Center</h2>Live wedstrijden, uitslagen en updates</div>
+    <div class="card">
+      <h2>🔴 Live Scores Center</h2>
+      Live wedstrijden, uitslagen en updates
+    </div>
 
     <div class="card match-card">
       <h2>🔴 LIVE</h2>
@@ -322,7 +337,10 @@ function showLiveScores() {
 
 function showMore() {
   app.innerHTML = `
-    <div class="card"><h2>☰ Meer</h2>Extra onderdelen van WorldCup Live Pro</div>
+    <div class="card">
+      <h2>☰ Meer</h2>
+      Extra onderdelen van WorldCup Live Pro
+    </div>
 
     <div class="card"><button onclick="showTeams()">👥 Teams</button></div>
     <div class="card"><button onclick="showStadiums()">🏟 Stadions</button></div>
