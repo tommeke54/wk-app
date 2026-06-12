@@ -139,10 +139,12 @@ function showPlayers(countryName) {
       html += `
         <div class="card">
           <h2>⚽ ${player.name}</h2>
+
           ${player.photo ? `
-<img src="${player.photo}"
-     style="width:120px;border-radius:12px;margin-bottom:10px;">
-` : "📸 Geen foto"}
+            <img src="${player.photo}" style="width:120px;border-radius:12px;margin-bottom:10px;">
+          ` : "📸 Geen foto"}
+
+          <br><br>
           🔢 Rugnummer: ${player.number || "-"}<br>
           🎂 Leeftijd: ${player.age || "-"}<br>
           ⚽ Positie: ${player.position}<br>
@@ -155,7 +157,6 @@ function showPlayers(countryName) {
 
   app.innerHTML = html;
 }
-
 function showStadiums() {
   app.innerHTML = `
     <div class="card"><h2>🏟 Stadions Pro</h2>WK-stadions met lokale tijd.</div>
