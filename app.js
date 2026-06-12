@@ -170,35 +170,58 @@ function showStadiums() {
   app.innerHTML = `
     <div class="card">
       <h2>🏟 Stadions Pro</h2>
-      WK-stadions met lokale tijd.
+      WK 2026 stadions met foto's, capaciteit en lokale tijd.
     </div>
 
     <div class="card">
       <h2>🏟 MetLife Stadium</h2>
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/MetLife_Stadium.jpg"
+      style="width:100%;border-radius:15px;margin-bottom:10px;">
+
       📍 East Rutherford, New Jersey<br>
       🌍 Verenigde Staten<br>
-      👥 Capaciteit: ongeveer 82.500<br>
-      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/New_York" })}
+      👥 Capaciteit: 82.500<br>
+      🏆 Finale WK 2026<br>
+      🕒 Lokale tijd:
+      ${new Date().toLocaleTimeString("nl-BE", {
+        timeZone: "America/New_York"
+      })}
     </div>
 
     <div class="card">
       <h2>🏟 Estadio Azteca</h2>
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Estadio_Azteca.jpg"
+      style="width:100%;border-radius:15px;margin-bottom:10px;">
+
       📍 Mexico-Stad<br>
       🌍 Mexico<br>
-      👥 Capaciteit: ongeveer 87.500<br>
-      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Mexico_City" })}
+      👥 Capaciteit: 87.500<br>
+      🏆 Openingswedstrijden<br>
+      🕒 Lokale tijd:
+      ${new Date().toLocaleTimeString("nl-BE", {
+        timeZone: "America/Mexico_City"
+      })}
     </div>
 
     <div class="card">
       <h2>🏟 BC Place</h2>
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/BC_Place_2012.jpg"
+      style="width:100%;border-radius:15px;margin-bottom:10px;">
+
       📍 Vancouver<br>
       🌍 Canada<br>
-      👥 Capaciteit: ongeveer 54.000<br>
-      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Vancouver" })}
+      👥 Capaciteit: 54.000<br>
+      🏆 Groepsfase wedstrijden<br>
+      🕒 Lokale tijd:
+      ${new Date().toLocaleTimeString("nl-BE", {
+        timeZone: "America/Vancouver"
+      })}
     </div>
   `;
 }
-
 function showStandings() {
   app.innerHTML = `
     <div class="card">
