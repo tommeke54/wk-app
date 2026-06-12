@@ -322,24 +322,26 @@ function showKnockout() {
   `;
 }
 function showNews() {
-  app.innerHTML = `
+  let html = `
     <div class="card">
-      <h2>📰 WK Nieuws Center</h2>
-      Laatste updates rond het WK voetbal
-    </div>
-
-    <div class="card">
-      <h2>🇧🇪 België Nieuws</h2>
-      • België bereidt zich voor op de topwedstrijd tegen Frankrijk<br>
-      • Supporters kijken uit naar een sterk WK
-    </div>
-
-    <div class="card">
-      <h2>🌍 Wereldnieuws WK</h2>
-      • Stadions in de Verenigde Staten, Mexico en Canada worden klaargemaakt<br>
-      • Toplanden bereiden zich voor op de groepsfase
+      <h2>📰 Nieuws Center Pro</h2>
+      Nieuws geladen uit data-news.js
     </div>
   `;
+
+  newsData.forEach(news => {
+    html += `
+      <div class="card">
+        <h2>📰 ${news.category}</h2>
+
+        <strong>${news.title}</strong><br><br>
+
+        ${news.text}
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
 }
 
 function showBelgium() {
