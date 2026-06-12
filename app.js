@@ -139,7 +139,10 @@ function showPlayers(countryName) {
       html += `
         <div class="card">
           <h2>⚽ ${player.name}</h2>
-          📸 Spelersfoto volgt later<br><br>
+          ${player.photo ? `
+<img src="${player.photo}"
+     style="width:120px;border-radius:12px;margin-bottom:10px;">
+` : "📸 Geen foto"}
           🔢 Rugnummer: ${player.number || "-"}<br>
           🎂 Leeftijd: ${player.age || "-"}<br>
           ⚽ Positie: ${player.position}<br>
