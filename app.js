@@ -68,33 +68,34 @@ function showHome() {
 }
 
 function showMatches() {
-  app.innerHTML = `
+  let html = `
     <div class="card">
-      <h2>⚽ WK 2026 Wedstrijden</h2>
-      Professioneel wedstrijdschema
-    </div>
-
-    <div class="card match-card">
-      <h2>🟢 GEPLAND</h2>
-      🇧🇪 België
-      <div class="vs">VS</div>
-      🇫🇷 Frankrijk<br><br>
-      📅 20 juni 2026<br>
-      🕘 21:00<br>
-      🏟 MetLife Stadium
-    </div>
-
-    <div class="card match-card">
-      <h2>🔴 LIVE DEMO</h2>
-      🇳🇱 Nederland
-      <div class="vs">1 - 1</div>
-      🇦🇷 Argentinië<br><br>
-      ⏱ Minuut 67<br>
-      🏟 SoFi Stadium
+      <h2>⚽ WK 2026 Wedstrijden Center</h2>
+      Wedstrijden worden geladen uit data-matches.js
     </div>
   `;
-}
 
+  matchesData.forEach(match => {
+    html += `
+      <div class="card match-card">
+        <h2>${match.status}</h2>
+
+        ${match.home}
+        <div class="vs">${match.score}</div>
+        ${match.away}
+
+        <br><br>
+
+        📌 Groep ${match.group}<br>
+        📅 ${match.date}<br>
+        🕘 Belgische tijd: ${match.timeBE}<br>
+        🏟 ${match.stadium}
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
+}
 function showTeams() {
   let html = `
     <div class="card">
