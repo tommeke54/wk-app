@@ -40,7 +40,74 @@ const playersData = [
         club: "Real Madrid",
         star: true
       }
-    ]
+  ,
+{
+  name: "Youri Tielemans",
+  number: 8,
+  age: 29,
+  position: "Middenvelder",
+  club: "Aston Villa",
+  foot: "Rechts",
+  role: "Controleur",
+  star: true,
+  description: "Technische middenvelder met een uitstekend schot."
+},
+{
+  name: "Loïs Openda",
+  number: 9,
+  age: 26,
+  position: "Aanvaller",
+  club: "RB Leipzig",
+  foot: "Rechts",
+  role: "Diepgang",
+  star: false,
+  description: "Snelle spits met veel snelheid achter de verdediging."
+},
+{
+  name: "Leandro Trossard",
+  number: 11,
+  age: 31,
+  position: "Aanvaller",
+  club: "Arsenal",
+  foot: "Rechts",
+  role: "Creatieve aanvaller",
+  star: true,
+  description: "Veelzijdige aanvaller met techniek en ervaring."
+},
+{
+  name: "Amadou Onana",
+  number: 24,
+  age: 24,
+  position: "Middenvelder",
+  club: "Aston Villa",
+  foot: "Rechts",
+  role: "Balveroveraar",
+  star: false,
+  description: "Fysiek sterke middenvelder met veel loopvermogen."
+},
+{
+  name: "Wout Faes",
+  number: 4,
+  age: 28,
+  position: "Verdediger",
+  club: "Leicester City",
+  foot: "Rechts",
+  role: "Centrale verdediger",
+  star: false,
+  description: "Sterke verdediger en vaste waarde achterin."
+},
+{
+  name: "Arthur Theate",
+  number: 3,
+  age: 25,
+  position: "Verdediger",
+  club: "Eintracht Frankfurt",
+  foot: "Links",
+  role: "Linker verdediger",
+  star: false,
+  description: "Moderne verdediger met aanvallende kwaliteiten."
+} 
+ ]
   },
 
   // FRANKRIJK
