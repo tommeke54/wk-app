@@ -430,5 +430,32 @@ function showMore() {
     <div class="card"><button onclick="showNotifications()">🔔 Meldingen</button></div>
   `;
 }
+function showStandings() {
+  let html = `
+    <div class="card">
+      <h2>📊 Standen Center Pro</h2>
+      Groepsstanden geladen uit data-standings.js
+    </div>
+  `;
 
+  standingsData.forEach(group => {
+    html += `
+      <div class="card">
+        <h2>📊 Groep ${group.group}</h2>
+    `;
+
+    group.teams.forEach(row => {
+      html += `
+        ${row.team}<br>
+        Gespeeld: ${row.played} — Punten: ${row.points}<br><br>
+      `;
+    });
+
+    html += `
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
+}
 showHome();
