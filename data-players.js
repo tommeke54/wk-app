@@ -163,6 +163,95 @@ const playersData = [
   star: false,
   description: "Ervaren doelman en betrouwbare back-up."
 }
+,
+{
+  name: "Koen Casteels",
+  number: 12,
+  age: 33,
+  position: "Doelman",
+  club: "Al-Qadsiah",
+  foot: "Rechts",
+  role: "Doelman",
+  star: false,
+  description: "Ervaren keeper met sterke reflexen."
+},
+{
+  name: "Thomas Meunier",
+  number: 15,
+  age: 34,
+  position: "Verdediger",
+  club: "Lille",
+  foot: "Rechts",
+  role: "Wingback",
+  star: false,
+  description: "Ervaren rechtsback met aanvallende impulsen."
+},
+{
+  name: "Yannick Carrasco",
+  number: 23,
+  age: 32,
+  position: "Vleugelspeler",
+  club: "Al-Shabab",
+  foot: "Links",
+  role: "Aanvallende flankspeler",
+  star: false,
+  description: "Snelle en technische vleugelspeler."
+},
+{
+  name: "Orel Mangala",
+  number: 18,
+  age: 27,
+  position: "Middenvelder",
+  club: "Lyon",
+  foot: "Rechts",
+  role: "Box-to-box",
+  star: false,
+  description: "Dynamische middenvelder met veel energie."
+},
+{
+  name: "Aster Vranckx",
+  number: 16,
+  age: 23,
+  position: "Middenvelder",
+  club: "Wolfsburg",
+  foot: "Rechts",
+  role: "Controleur",
+  star: false,
+  description: "Talentvolle middenvelder met veel potentieel."
+},
+{
+  name: "Charles De Ketelaere",
+  number: 17,
+  age: 25,
+  position: "Aanvaller",
+  club: "Atalanta",
+  foot: "Links",
+  role: "Aanvallende middenvelder",
+  star: true,
+  description: "Creatieve aanvaller met techniek en inzicht."
+},
+{
+  name: "Malick Fofana",
+  number: 20,
+  age: 20,
+  position: "Vleugelspeler",
+  club: "Lyon",
+  foot: "Rechts",
+  role: "Jong talent",
+  star: false,
+  description: "Veelbelovende aanvaller met snelheid."
+},
+{
+  name: "Arthur Vermeeren",
+  number: 6,
+  age: 20,
+  position: "Middenvelder",
+  club: "RB Leipzig",
+  foot: "Rechts",
+  role: "Spelverdeler",
+  star: false,
+  description: "Jonge middenvelder met uitstekend overzicht."
+}
  ]
   },
 
