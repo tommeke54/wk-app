@@ -136,194 +136,30 @@ function showMatches() {
 }
 
 function showTeams() {
-  app.innerHTML = `
+  let html = `
     <div class="card">
-      <h2>👥 Landen & Spelers Pro</h2>
-      Selecties, sterspelers, posities en clubs.
-    </div>
-
-    <div class="card">
-      <h2>🇧🇪 België</h2>
-      🏆 FIFA Ranking: Top 10<br>
-      📌 Groep: Groep A<br>
-      👔 Bondscoach: Rudi Garcia<br><br>
-
-      ⭐ Sterspelers<br><br>
-      ⚽ Kevin De Bruyne<br>
-      Positie: Middenvelder<br>
-      Club: Manchester City<br><br>
-
-      ⚽ Romelu Lukaku<br>
-      Positie: Aanvaller<br>
-      Club: Napoli<br><br>
-
-      ⚽ Jérémy Doku<br>
-      Positie: Vleugelspeler<br>
-      Club: Manchester City<br><br>
-
-      ⚽ Thibaut Courtois<br>
-      Positie: Doelman<br>
-      Club: Real Madrid<br><br>
-
-      <button onclick="setFavorite('België 🇧🇪')">⭐ Favoriet maken</button>
-    </div>
-
-    <div class="card">
-      <h2>🇫🇷 Frankrijk</h2>
-      🏆 FIFA Ranking: Top 5<br>
-      📌 Groep: Groep A<br>
-      👔 Bondscoach: Didier Deschamps<br><br>
-
-      ⭐ Sterspelers<br><br>
-      ⚽ Kylian Mbappé<br>
-      Positie: Aanvaller<br>
-      Club: Real Madrid<br><br>
-
-      ⚽ Antoine Griezmann<br>
-      Positie: Aanvaller / Middenvelder<br>
-      Club: Atlético Madrid<br><br>
-
-      ⚽ Eduardo Camavinga<br>
-      Positie: Middenvelder<br>
-      Club: Real Madrid<br><br>
-
-      ⚽ Ousmane Dembélé<br>
-      Positie: Vleugelspeler<br>
-      Club: Paris Saint-Germain<br><br>
-
-      <button onclick="setFavorite('Frankrijk 🇫🇷')">⭐ Favoriet maken</button>
-    </div>
-
-    <div class="card">
-      <h2>🇧🇷 Brazilië</h2>
-      🏆 FIFA Ranking: Top 5<br>
-      📌 Groep: Groep B<br>
-      👔 Bondscoach: Carlo Ancelotti<br><br>
-
-      ⭐ Sterspelers<br><br>
-      ⚽ Vinícius Júnior<br>
-      Positie: Vleugelspeler<br>
-      Club: Real Madrid<br><br>
-
-      ⚽ Rodrygo<br>
-      Positie: Aanvaller<br>
-      Club: Real Madrid<br><br>
-
-      ⚽ Bruno Guimarães<br>
-      Positie: Middenvelder<br>
-      Club: Newcastle United<br><br>
-
-      ⚽ Marquinhos<br>
-      Positie: Verdediger<br>
-      Club: Paris Saint-Germain<br><br>
-
-      <button onclick="setFavorite('Brazilië 🇧🇷')">⭐ Favoriet maken</button>
-    </div>
-
-    <div class="card">
-      <h2>🇩🇪 Duitsland</h2>
-      🏆 FIFA Ranking: Top 10<br>
-      📌 Groep: Groep B<br>
-      👔 Bondscoach: Julian Nagelsmann<br><br>
-
-      ⭐ Sterspelers<br><br>
-      ⚽ Jamal Musiala<br>
-      Positie: Aanvallende middenvelder<br>
-      Club: Bayern München<br><br>
-
-      ⚽ Florian Wirtz<br>
-      Positie: Aanvallende middenvelder<br>
-      Club: Bayer Leverkusen<br><br>
-
-      ⚽ Kai Havertz<br>
-      Positie: Aanvaller / Middenvelder<br>
-      Club: Arsenal<br><br>
-
-      ⚽ Joshua Kimmich<br>
-      Positie: Middenvelder<br>
-      Club: Bayern München<br><br>
-
-      <button onclick="setFavorite('Duitsland 🇩🇪')">⭐ Favoriet maken</button>
-    </div>
-
-    <div class="card">
-      <h2>🇳🇱 Nederland</h2>
-      🏆 FIFA Ranking: Top 10<br>
-      📌 Groep: Groep C<br>
-      👔 Bondscoach: Ronald Koeman<br><br>
-
-      ⭐ Sterspelers<br><br>
-      ⚽ Virgil van Dijk<br>
-      Positie: Verdediger<br>
-      Club: Liverpool<br><br>
-
-      ⚽ Xavi Simons<br>
-      Positie: Middenvelder / Aanvaller<br>
-      Club: RB Leipzig<br><br>
-
-      ⚽ Cody Gakpo<br>
-      Positie: Aanvaller<br>
-      Club: Liverpool<br><br>
-
-      ⚽ Frenkie de Jong<br>
-      Positie: Middenvelder<br>
-      Club: FC Barcelona<br><br>
-
-      <button onclick="setFavorite('Nederland 🇳🇱')">⭐ Favoriet maken</button>
-    </div>
-
-    <div class="card">
-      <h2>🇪🇸 Spanje</h2>
-      🏆 FIFA Ranking: Top 10<br>
-      📌 Groep: Groep C<br>
-      👔 Bondscoach: Luis de la Fuente<br><br>
-
-      ⭐ Sterspelers<br><br>
-      ⚽ Pedri<br>
-      Positie: Middenvelder<br>
-      Club: FC Barcelona<br><br>
-
-      ⚽ Lamine Yamal<br>
-      Positie: Vleugelspeler<br>
-      Club: FC Barcelona<br><br>
-
-      ⚽ Rodri<br>
-      Positie: Middenvelder<br>
-      Club: Manchester City<br><br>
-
-      ⚽ Nico Williams<br>
-      Positie: Vleugelspeler<br>
-      Club: Athletic Club<br><br>
-
-      <button onclick="setFavorite('Spanje 🇪🇸')">⭐ Favoriet maken</button>
-    </div>
-
-    <div class="card">
-      <h2>🇦🇷 Argentinië</h2>
-      🏆 FIFA Ranking: Top 5<br>
-      📌 Groep: Groep D<br>
-      👔 Bondscoach: Lionel Scaloni<br><br>
-
-      ⭐ Sterspelers<br><br>
-      ⚽ Lionel Messi<br>
-      Positie: Aanvaller<br>
-      Club: Inter Miami<br><br>
-
-      ⚽ Lautaro Martínez<br>
-      Positie: Aanvaller<br>
-      Club: Inter Milan<br><br>
-
-      ⚽ Julián Álvarez<br>
-      Positie: Aanvaller<br>
-      Club: Atlético Madrid<br><br>
-
-      ⚽ Emiliano Martínez<br>
-      Positie: Doelman<br>
-      Club: Aston Villa<br><br>
-
-      <button onclick="setFavorite('Argentinië 🇦🇷')">⭐ Favoriet maken</button>
+      <h2>🌍 Alle WK-landen</h2>
+      Overzicht van alle landen uit data-teams.js
     </div>
   `;
+
+  teamsData.forEach(team => {
+    html += `
+      <div class="card">
+        <h2>${team.flag} ${team.name}</h2>
+        📌 Groep: ${team.group}<br>
+        👔 Bondscoach: ${team.coach}<br><br>
+        ⭐ Sterspelers<br><br>
+        ${team.stars.map(star => `⚽ ${star}<br>`).join("")}
+        <br>
+        <button onclick="setFavorite('${team.name} ${team.flag}')">
+          ⭐ Favoriet maken
+        </button>
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
 }
 function showStadiums() {
   app.innerHTML = `
