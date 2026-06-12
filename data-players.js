@@ -2,6 +2,8 @@ const playersData = [
 
   // BELGIË
 {
+  country: "België",
+  players: [ 
   name: "Kevin De Bruyne",
   number: 7,
   age: 34,
@@ -11,7 +13,7 @@ const playersData = [
   role: "Spelmaker",
   star: true,
   description: "Creatieve middenvelder en leider van de Rode Duivels."
-}
+},
       {
         name: "Romelu Lukaku",
         number: 10,
