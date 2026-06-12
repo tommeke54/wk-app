@@ -169,84 +169,140 @@ function showPlayers(countryName) {
 function showStadiums() {
   app.innerHTML = `
     <div class="card">
-      <h2>🏟 Stadions Pro</h2>
-      WK 2026 stadions met foto's, capaciteit en lokale tijd.
+      <h2>🏟 WK 2026 Stadions Compleet</h2>
+      Alle 16 WK-stadions zonder foto's. Foto's komen later in een aparte galerij.
     </div>
 
     <div class="card">
-      <h2>🏟 MetLife Stadium</h2>
+      <h2>🏟 Dallas Stadium</h2>
+      📍 Arlington, Texas<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 94.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Chicago" })}
+    </div>
 
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/MetLife_Stadium.jpg"
-      style="width:100%;border-radius:15px;margin-bottom:10px;">
+    <div class="card">
+      <h2>🏟 Mexico City Stadium</h2>
+      📍 Mexico-Stad<br>
+      🌍 Mexico<br>
+      👥 Capaciteit: 83.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Mexico_City" })}
+    </div>
 
+    <div class="card">
+      <h2>🏟 New York New Jersey Stadium</h2>
       📍 East Rutherford, New Jersey<br>
       🌍 Verenigde Staten<br>
       👥 Capaciteit: 82.500<br>
       🏆 Finale WK 2026<br>
-      🕒 Lokale tijd:
-      ${new Date().toLocaleTimeString("nl-BE", {
-        timeZone: "America/New_York"
-      })}
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/New_York" })}
     </div>
 
     <div class="card">
-      <h2>🏟 Estadio Azteca</h2>
+      <h2>🏟 Atlanta Stadium</h2>
+      📍 Atlanta, Georgia<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 75.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/New_York" })}
+    </div>
 
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Estadio_Azteca.jpg"
-      style="width:100%;border-radius:15px;margin-bottom:10px;">
+    <div class="card">
+      <h2>🏟 Kansas City Stadium</h2>
+      📍 Kansas City, Missouri<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 73.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Chicago" })}
+    </div>
 
-      📍 Mexico-Stad<br>
+    <div class="card">
+      <h2>🏟 Houston Stadium</h2>
+      📍 Houston, Texas<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 72.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Chicago" })}
+    </div>
+
+    <div class="card">
+      <h2>🏟 San Francisco Bay Area Stadium</h2>
+      📍 Santa Clara, California<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 71.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Los_Angeles" })}
+    </div>
+
+    <div class="card">
+      <h2>🏟 Los Angeles Stadium</h2>
+      📍 Inglewood, California<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 70.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Los_Angeles" })}
+    </div>
+
+    <div class="card">
+      <h2>🏟 Philadelphia Stadium</h2>
+      📍 Philadelphia, Pennsylvania<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 69.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/New_York" })}
+    </div>
+
+    <div class="card">
+      <h2>🏟 Seattle Stadium</h2>
+      📍 Seattle, Washington<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 69.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Los_Angeles" })}
+    </div>
+
+    <div class="card">
+      <h2>🏟 Miami Stadium</h2>
+      📍 Miami Gardens, Florida<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 65.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/New_York" })}
+    </div>
+
+    <div class="card">
+      <h2>🏟 Boston Stadium</h2>
+      📍 Foxborough, Massachusetts<br>
+      🌍 Verenigde Staten<br>
+      👥 Capaciteit: 65.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/New_York" })}
+    </div>
+
+    <div class="card">
+      <h2>🏟 Guadalajara Stadium</h2>
+      📍 Guadalajara<br>
       🌍 Mexico<br>
-      👥 Capaciteit: 87.500<br>
-      🏆 Openingswedstrijden<br>
-      🕒 Lokale tijd:
-      ${new Date().toLocaleTimeString("nl-BE", {
-        timeZone: "America/Mexico_City"
-      })}
+      👥 Capaciteit: 48.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Mexico_City" })}
     </div>
 
     <div class="card">
-      <h2>🏟 BC Place</h2>
+      <h2>🏟 Monterrey Stadium</h2>
+      📍 Guadalupe / Monterrey<br>
+      🌍 Mexico<br>
+      👥 Capaciteit: 53.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Monterrey" })}
+    </div>
 
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/BC_Place_2012.jpg"
-      style="width:100%;border-radius:15px;margin-bottom:10px;">
+    <div class="card">
+      <h2>🏟 Toronto Stadium</h2>
+      📍 Toronto<br>
+      🌍 Canada<br>
+      👥 Capaciteit: 45.000<br>
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Toronto" })}
+    </div>
 
+    <div class="card">
+      <h2>🏟 Vancouver Stadium</h2>
       📍 Vancouver<br>
       🌍 Canada<br>
       👥 Capaciteit: 54.000<br>
-      🏆 Groepsfase wedstrijden<br>
-      🕒 Lokale tijd:
-      ${new Date().toLocaleTimeString("nl-BE", {
-        timeZone: "America/Vancouver"
-      })}
+      🕒 Lokale tijd: ${new Date().toLocaleTimeString("nl-BE", { timeZone: "America/Vancouver" })}
     </div>
   `;
 }
-function showStandings() {
-  app.innerHTML = `
-    <div class="card">
-      <h2>📊 WK 2026 Standen Pro</h2>
-      Groepsfase overzicht
-    </div>
-
-    <div class="card">
-      <h2>📊 Groep A</h2>
-      🇧🇪 België — 3 gespeeld — 7 punten<br>
-      🇫🇷 Frankrijk — 3 gespeeld — 6 punten<br>
-      🇧🇷 Brazilië — 3 gespeeld — 4 punten<br>
-      🇩🇪 Duitsland — 3 gespeeld — 0 punten
-    </div>
-
-    <div class="card">
-      <h2>📊 Groep B</h2>
-      🇳🇱 Nederland — 3 gespeeld — 7 punten<br>
-      🇪🇸 Spanje — 3 gespeeld — 6 punten<br>
-      🇦🇷 Argentinië — 3 gespeeld — 4 punten<br>
-      🇯🇵 Japan — 0 punten
-    </div>
-  `;
-}
-
 function showKnockout() {
   app.innerHTML = `
     <div class="card">
