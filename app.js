@@ -451,6 +451,38 @@ function showLiveScores() {
     </div>
   `;
 }
+function showMore() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>☰ Meer</h2>
+      Extra onderdelen van WorldCup Live Pro
+    </div>
+
+    <div class="card">
+      <button onclick="showTeams()">👥 Teams</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showStadiums()">🏟 Stadions</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showStandings()">📊 Standen</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showKnockout()">🏆 Knock-out</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showNews()">📰 Nieuws</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showNotifications()">🔔 Meldingen</button>
+    </div>
+  `;
+}
 showHome();
 function showNews() {
   app.innerHTML = `
