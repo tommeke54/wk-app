@@ -305,45 +305,12 @@ function showStadiums() {
   `;
 }
 function showKnockout() {
-  let html = `
+  app.innerHTML = `
     <div class="card">
-      <h2>🏆 Knock-out Center Pro</h2>
-      Knock-outfase geladen uit data-knockout.js
+      <h2>🏆 TEST</h2>
+      Knock-out knop werkt!
     </div>
   `;
-
-  knockoutData.forEach(round => {
-    html += `
-      <div class="card">
-        <h2>🏆 ${round.round}</h2>
-    `;
-
-    round.matches.forEach(match => {
-      html += `
-        <div class="match-card">
-          <h2>${match.status}</h2>
-
-          ${match.home}
-          <div class="vs">${match.score}</div>
-          ${match.away}
-
-          <br><br>
-
-          📅 ${match.date}<br>
-          🕘 Belgische tijd: ${match.timeBE}<br>
-          🏟 ${match.stadium}
-
-          <br><br>
-        </div>
-      `;
-    });
-
-    html += `
-      </div>
-    `;
-  });
-
-  app.innerHTML = html;
 }
 function showNews() {
   app.innerHTML = `
