@@ -92,29 +92,50 @@ function showMatches() {
   `;
 }
 
-function showTeams() {
+function showPlayers(countryName) {
+  const team = teamsData.find(t => t.name === countryName);
+  const countryPlayers = playersData.find(p => p.country === countryName);
+
   let html = `
     <div class="card">
-      <h2>🌍 Alle WK-landen & Spelers</h2>
-      Klik op een land om de spelers te bekijken.
+      <h2>${team ? team.flag : ""} ${countryName}</h2>
+      Spelersinformatie<br><br>
+      <button onclick="showTeams()">⬅ Terug naar landen</button>
     </div>
   `;
 
-  teamsData.forEach(team => {
+  if (!countryPlayers) {
     html += `
       <div class="card">
-        <h2>${team.flag} ${team.name}</h2>
-        📌 Groep: ${team.group}<br>
-        👔 Bondscoach: ${team.coach}<br><br>
-
-        <button onclick="setFavorite('${team.name} ${team.flag}')">⭐ Favoriet maken</button>
-        <button onclick="showPlayers('${team.name}')">👥 Bekijk spelers</button>
+        Voor dit land zijn nog geen spelers toegevoegd.
       </div>
     `;
-  });
+  } else {
+    countryPlayers.players.forEach(player => {
+      html += `
+        <div class="card">
+          <h2>⚽ ${player.name}</h2>
+
+          🔢 Rugnummer: ${player.number || "-"}<br>
+          🎂 Leeftijd: ${player.age || "-"}<br>
+          ⚽ Positie: ${player.position}<br>
+          🏟 Club: ${player.club}<br>
+          🦶 Voet: ${player.foot || "-"}<br>
+          🎯 Rol: ${player.role || "-"}<br><br>
+
+          ${player.description ? `
+            📝 ${player.description}<br><br>
+          ` : ""}
+
+          ${player.star ? "⭐ Sterspeler" : ""}
+        </div>
+      `;
+    });
+  }
 
   app.innerHTML = html;
 }
+
 
 function showPlayers(countryName) {
   const team = teamsData.find(t => t.name === countryName);
