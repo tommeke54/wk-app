@@ -1,18 +1,17 @@
 const playersData = [
 
   // BELGIË
-  {
-    country: "België",
-    players: [
-      {
-        name: "Kevin De Bruyne",
-        number: 7,
-        age: 34,
-        position: "Middenvelder",
-        club: "Manchester City",
-        star: true,
-        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Kevin_De_Bruyne_201807091.jpg/320px-Kevin_De_Bruyne_201807091.jpg"
-      },
+{
+  name: "Kevin De Bruyne",
+  number: 7,
+  age: 34,
+  position: "Middenvelder",
+  club: "Manchester City",
+  foot: "Rechts",
+  role: "Spelmaker",
+  star: true,
+  description: "Creatieve middenvelder en leider van de Rode Duivels."
+}
       {
         name: "Romelu Lukaku",
         number: 10,
