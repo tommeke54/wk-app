@@ -185,16 +185,38 @@ function showPlayers(countryName) {
     `;
   } else {
     countryPlayers.players.forEach(player => {
-      html += `
-        <div class="card">
-          <h2>⚽ ${player.name}</h2>
-          Positie: ${player.position}<br>
-          Club: ${player.club}
-        </div>
-      `;
-    });
-  }
 
+  html += `
+    <div class="card">
+
+      <h2>⚽ ${player.name}</h2>
+
+      📸 Spelersfoto volgt later
+
+      <br><br>
+
+      🔢 Rugnummer: ${player.number || "-"}
+
+      <br>
+
+      🎂 Leeftijd: ${player.age || "-"}
+
+      <br>
+
+      ⚽ Positie: ${player.position}
+
+      <br>
+
+      🏟 Club: ${player.club}
+
+      <br><br>
+
+      ${player.star ? "⭐ Sterspeler" : ""}
+
+    </div>
+  `;
+
+});
   app.innerHTML = html;
 }
 function showStadiums() {
