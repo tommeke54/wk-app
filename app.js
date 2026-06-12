@@ -305,22 +305,21 @@ function showStadiums() {
   `;
 }
 function showKnockout() {
-  let html = `
+  app.innerHTML = `
     <div class="card">
       <h2>🏆 Knock-out Center Pro</h2>
-      Knock-outfase geladen uit data-knockout.js
+      Knock-outfase
+    </div>
+
+    <div class="card">
+      <h2>🏆 Finale</h2>
+      Finalist 1
+      <div class="vs">VS</div>
+      Finalist 2<br><br>
+      📅 19 juli 2026<br>
+      🏟 New York New Jersey Stadium
     </div>
   `;
-
-  knockoutData.forEach(round => {
-    html += `
-      <div class="card">
-        <h2>🏆 ${round.round}</h2>
-      </div>
-    `;
-  });
-
-  app.innerHTML = html;
 }
 function showNews() {
   app.innerHTML = `
