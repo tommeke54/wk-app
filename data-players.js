@@ -11,7 +11,7 @@ const playersData = [
   role: "Spelmaker",
   star: true,
   description: "Creatieve middenvelder en leider van de Rode Duivels."
-},
+}
       {
         name: "Romelu Lukaku",
         number: 10,
