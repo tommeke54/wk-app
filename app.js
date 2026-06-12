@@ -141,7 +141,14 @@ function showPlayers(countryName) {
           <h2>⚽ ${player.name}</h2>
 
           ${player.photo ? `
-            <img src="${player.photo}" style="width:120px;border-radius:12px;margin-bottom:10px;">
+            <img src="${player.photo}"
+     style="
+     width:100%;
+     max-width:320px;
+     border-radius:15px;
+     margin-bottom:10px;
+     border:3px solid gold;
+     ">
           ` : "📸 Geen foto"}
 
           <br><br>
