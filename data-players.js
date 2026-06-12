@@ -1,14 +1,43 @@
 const playersData = [
 
   // BELGIË
-  {
-    country: "België",
-    players: [
-      { name: "Kevin De Bruyne", position: "Middenvelder", club: "Manchester City" },
-      { name: "Romelu Lukaku", position: "Aanvaller", club: "Napoli" },
-      { name: "Jérémy Doku", position: "Vleugelspeler", club: "Manchester City" },
-      { name: "Thibaut Courtois", position: "Doelman", club: "Real Madrid" }
-    ]
+ {
+  country: "België",
+  players: [
+    {
+      name: "Kevin De Bruyne",
+      number: 7,
+      age: 34,
+      position: "Middenvelder",
+      club: "Manchester City",
+      star: true
+    },
+    {
+      name: "Romelu Lukaku",
+      number: 10,
+      age: 33,
+      position: "Aanvaller",
+      club: "Napoli",
+      star: true
+    },
+    {
+      name: "Jérémy Doku",
+      number: 22,
+      age: 24,
+      position: "Vleugelspeler",
+      club: "Manchester City",
+      star: true
+    },
+    {
+      name: "Thibaut Courtois",
+      number: 1,
+      age: 34,
+      position: "Doelman",
+      club: "Real Madrid",
+      star: true
+    }
+  ]
+}
   },
 
   // FRANKRIJK
