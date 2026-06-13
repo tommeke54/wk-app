@@ -316,6 +316,30 @@ function showKnockout() {
     html += `
       <div class="card">
         <h2>🏆 ${round.round}</h2>
+    `;
+
+    if (round.matches.length === 0) {
+      html += `
+        Nog geen wedstrijden bekend.
+      `;
+    } else {
+      round.matches.forEach(match => {
+        html += `
+          <div class="match-card">
+            <h2>${match.status}</h2>
+            ${match.home}
+            <div class="vs">${match.score}</div>
+            ${match.away}<br><br>
+            📅 ${match.date}<br>
+            🕘 Belgische tijd: ${match.timeBE}<br>
+            🏟 ${match.stadium}
+          </div>
+          <br>
+        `;
+      });
+    }
+
+    html += `
       </div>
     `;
   });
