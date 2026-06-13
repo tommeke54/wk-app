@@ -129,12 +129,7 @@ function showMatchDay(dayName) {
   app.innerHTML = html;
 }
 function showMatchDay2() {
-  app.innerHTML = `
-    <div class="card">
-      <h2>📅 Speeldag 2</h2>
-      Wedstrijden volgen hier.
-    </div>
-  `;
+  showMatchDay("Speeldag 2");
 }
 
 function showMatchDay3() {
