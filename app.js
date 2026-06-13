@@ -110,9 +110,9 @@ function showHome() {
     <div class="card match-card">
       <h2>🇧🇪 Volgende België-wedstrijd</h2>
       ${belgiumMatch ? `
-        ${belgiumMatch.home}
-        <div class="vs">${belgiumMatch.score}</div>
-        ${belgiumMatch.away}<br><br>
+       <strong>${belgiumMatch.home}</strong>
+<div class="vs">VS</div>
+<strong>${belgiumMatch.away}</strong><br><br> 
         📅 ${belgiumMatch.date}<br>
         🕘 Belgische tijd: ${belgiumMatch.timeBE}<br>
         🏟 ${belgiumMatch.stadium}
