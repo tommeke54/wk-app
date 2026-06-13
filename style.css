@@ -307,3 +307,20 @@ transform:scale(1.15);
   background:rgba(255,215,0,0.15);
   font-weight:bold;
 }
+.rank-1,
+.rank-2 {
+  background: rgba(34,197,94,.15);
+}
+
+.rank-3 {
+  background: rgba(245,158,11,.10);
+}
+
+.rank-4 {
+  background: rgba(239,68,68,.10);
+}
+
+.belgium-row {
+  background: rgba(255,215,0,.28) !important;
+  font-weight: bold;
+}
