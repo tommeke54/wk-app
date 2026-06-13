@@ -622,4 +622,18 @@ function showTeams() {
 
   app.innerHTML = html;
 }
+function showLiveNewsFeed() {
+  app.innerHTML = `
+    <div class="card">
+      <h2>🛰 Live Nieuws Pro</h2>
+      Live nieuwsfeed wordt voorbereid.
+    </div>
+
+    <div class="card">
+      🚧 Deze functie komt in v12.0.
+      <br><br>
+      Nieuws Pro blijft voorlopig actief als backup.
+    </div>
+  `;
+}
 showHome();
