@@ -171,8 +171,18 @@ function showHome() {
     <br><br>
 
     🤖 <strong>Met ondersteuning van</strong><br>
-    ChatGPT
-    <br><br>
+ChatGPT
+<br><br>
+
+⚽ Van groepsfase tot wereldtitel,<br>
+alles op één plaats voor de echte supporter.
+<br><br>
+
+🇧🇪 Trots gebouwd voor de Rode Duivels<br>
+en alle WK-supporters wereldwijd.
+<br><br>
+
+⚽ Standen · Nieuws · Uitslagen · België · Stadions
 
     ⚽ Standen · Nieuws · Uitslagen · België · Stadions
     <br><br>
