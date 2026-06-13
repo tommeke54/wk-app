@@ -472,24 +472,64 @@ function showStandings() {
   let html = `
     <div class="card">
       <h2>📊 Standen Center Pro</h2>
-      Groepsstanden geladen uit data-standings.js
+      Alle groepen A t/m L
     </div>
   `;
 
   standingsData.forEach(group => {
+
+    const sortedTeams = [...group.teams].sort((a, b) => {
+      if (b.points !== a.points) return b.points - a.points;
+      if (b.goalDiff !== a.goalDiff) return b.goalDiff - a.goalDiff;
+      return b.goalsFor - a.goalsFor;
+    });
+
     html += `
-      <div class="card">
-        <h2>📊 Groep ${group.group}</h2>
+      <div class="standings-card">
+        <h2>🏆 Groep ${group.group}</h2>
+
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Team</th>
+              <th>GS</th>
+              <th>W</th>
+              <th>G</th>
+              <th>V</th>
+              <th>DV</th>
+              <th>DT</th>
+              <th>+/-</th>
+              <th>PT</th>
+            </tr>
+          </thead>
+          <tbody>
     `;
 
-    group.teams.forEach(row => {
+    sortedTeams.forEach((team, index) => {
+
+      const belgiumClass =
+        team.team.includes("België") ? "belgium-row" : "";
+
       html += `
-        ${row.team}<br>
-        Gespeeld: ${row.played} — Punten: ${row.points}<br><br>
+        <tr class="${belgiumClass}">
+          <td>${index + 1}</td>
+          <td>${team.team}</td>
+          <td>${team.played}</td>
+          <td>${team.wins}</td>
+          <td>${team.draws}</td>
+          <td>${team.losses}</td>
+          <td>${team.goalsFor}</td>
+          <td>${team.goalsAgainst}</td>
+          <td>${team.goalDiff}</td>
+          <td><strong>${team.points}</strong></td>
+        </tr>
       `;
     });
 
     html += `
+          </tbody>
+        </table>
       </div>
     `;
   });
