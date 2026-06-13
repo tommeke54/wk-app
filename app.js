@@ -194,8 +194,12 @@ en alle WK-supporters wereldwijd.
 
   <hr style="margin:20px 0;">
 
-  <h3>📱 Deel deze app</h3>
-  <p>Scan de QR-code en open WorldCup Live Pro direct.</p>
+ <h3>📱 Deel deze app</h3>
+
+<p style="font-size:16px;font-weight:bold;color:#FFD700;">
+  Scan en open direct op smartphone
+</p> 
+  
 
   <img 
     src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://tommeke54.github.io/wk-app/"
