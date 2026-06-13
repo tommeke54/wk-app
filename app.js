@@ -85,10 +85,11 @@ function showMatches() {
     <div class="card">
       <button onclick="showMatchDay3()">📅 Speeldag 3</button>
     </div>
+
+    <div class="card">
+      <button onclick="showKnockout()">🏆 Knock-out</button>
+    </div>
   `;
-<div class="card">
-  <button onclick="showKnockout()">🏆 Knock-out</button>
-</div>
 }
 function showMatchDay1() {
   showMatchDay("Speeldag 1");
