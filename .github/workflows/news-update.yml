@@ -1,7 +1,10 @@
 name: Test Workflow
 
-on:
+"on":
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/news-update.yml"
 
 jobs:
   test:
