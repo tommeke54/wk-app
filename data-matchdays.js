@@ -69,3 +69,8 @@ const matchDaysData = [
     { group:"K", status:"GEPLAND", date:"24 juni 2026", timeBE:"04:00", home:"Colombia 🇨🇴", away:"DR Congo 🇨🇩", score:"VS", stadium:"Nog aan te vullen" }
   ]
 },
+{
+  day: "Speeldag 3",
+  matches: []
+}
+];
