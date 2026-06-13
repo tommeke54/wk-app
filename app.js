@@ -414,23 +414,32 @@ function showNotifications() {
 }
 
 function showLiveScores() {
-  app.innerHTML = `
+  let html = `
     <div class="card">
       <h2>🔴 Live Scores Center</h2>
-      Live wedstrijden, uitslagen en updates
-    </div>
-
-    <div class="card match-card">
-      <h2>🔴 LIVE</h2>
-      🇳🇱 Nederland
-      <div class="vs">1 - 1</div>
-      🇦🇷 Argentinië<br><br>
-      ⏱ Minuut 67<br>
-      ⚽ Laatste goal: Argentinië
+      Live scores geladen uit data-livescores.js
     </div>
   `;
-}
 
+  liveScoresData.forEach(match => {
+    html += `
+      <div class="card match-card">
+        <h2>🔴 ${match.status}</h2>
+
+        ${match.home}
+        <div class="vs">${match.score}</div>
+        ${match.away}
+
+        <br><br>
+
+        ⏱ Minuut ${match.minute}<br>
+        ⚽ Laatste goal: ${match.lastGoal}
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
+}
 function showMore() {
   app.innerHTML = `
     <div class="card">
