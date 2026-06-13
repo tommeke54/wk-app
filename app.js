@@ -690,4 +690,43 @@ function showLiveNewsFeed() {
     </div>
   `;
 }
+function showDailyResults() {
+
+  let html = `
+    <div class="card">
+      <h2>📋 Dagelijkse Uitslagen Pro</h2>
+      Automatisch overzicht van gespeelde wedstrijden
+    </div>
+  `;
+
+  matchDaysData.forEach(day => {
+
+    day.matches.forEach(match => {
+
+      if (match.status === "AFGELOPEN") {
+
+        html += `
+          <div class="card">
+
+            <h2>✅ Groep ${match.group}</h2>
+
+            ${match.home}
+            <div class="vs">${match.score}</div>
+            ${match.away}
+
+            <br><br>
+
+            📅 ${match.date}<br>
+            🏟 ${match.stadium}
+
+          </div>
+        `;
+      }
+
+    });
+
+  });
+
+  app.innerHTML = html;
+}
 showHome();
