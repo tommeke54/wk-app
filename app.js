@@ -464,7 +464,6 @@ function showMore() {
     <div class="card"><button onclick="showTeams()">👥 Teams</button></div>
     <div class="card"><button onclick="showStadiums()">🏟 Stadions</button></div>
     <div class="card"><button onclick="showStandings()">📊 Standen</button></div>
-    <div class="card"><button onclick="showKnockout()">🏆 Knock-out</button></div>
     <div class="card"><button onclick="showNews()">📰 Nieuws</button></div>
     <div class="card"><button onclick="showNotifications()">🔔 Meldingen</button></div>
   `;
