@@ -467,20 +467,85 @@ function showMore() {
     <div class="card"><button onclick="showNotifications()">🔔 Meldingen</button></div>
   `;
 }
+function calculateLiveStandings() {
+  const liveStandings = JSON.parse(JSON.stringify(standingsData));
+
+  liveStandings.forEach(group => {
+    group.teams.forEach(team => {
+      team.played = 0;
+      team.wins = 0;
+      team.draws = 0;
+      team.losses = 0;
+      team.goalsFor = 0;
+      team.goalsAgainst = 0;
+      team.goalDiff = 0;
+      team.points = 0;
+    });
+  });
+
+  matchDaysData.forEach(day => {
+    day.matches.forEach(match => {
+      if (match.status !== "AFGELOPEN") return;
+      if (!match.score.includes(" - ")) return;
+
+      const [homeGoals, awayGoals] = match.score.split(" - ").map(Number);
+
+      const group = liveStandings.find(g => g.group === match.group);
+      if (!group) return;
+
+      const homeTeam = group.teams.find(t => t.team === match.home);
+      const awayTeam = group.teams.find(t => t.team === match.away);
+
+      if (!homeTeam || !awayTeam) return;
+
+      homeTeam.played++;
+      awayTeam.played++;
+
+      homeTeam.goalsFor += homeGoals;
+      homeTeam.goalsAgainst += awayGoals;
+
+      awayTeam.goalsFor += awayGoals;
+      awayTeam.goalsAgainst += homeGoals;
+
+      homeTeam.goalDiff = homeTeam.goalsFor - homeTeam.goalsAgainst;
+      awayTeam.goalDiff = awayTeam.goalsFor - awayTeam.goalsAgainst;
+
+      if (homeGoals > awayGoals) {
+        homeTeam.wins++;
+        awayTeam.losses++;
+        homeTeam.points += 3;
+      } else if (homeGoals < awayGoals) {
+        awayTeam.wins++;
+        homeTeam.losses++;
+        awayTeam.points += 3;
+      } else {
+        homeTeam.draws++;
+        awayTeam.draws++;
+        homeTeam.points++;
+        awayTeam.points++;
+      }
+    });
+  });
+
+  return liveStandings;
+}
+
 function showStandings() {
+  const liveStandings = calculateLiveStandings();
+
   let html = `
     <div class="card">
-      <h2>📊 Standen Center Pro</h2>
-      Alle groepen A t/m L
+      <h2>📊 Live Standen Pro</h2>
+      Standen automatisch berekend uit gespeelde wedstrijden
     </div>
   `;
 
-  standingsData.forEach(group => {
-
+  liveStandings.forEach(group => {
     const sortedTeams = [...group.teams].sort((a, b) => {
       if (b.points !== a.points) return b.points - a.points;
       if (b.goalDiff !== a.goalDiff) return b.goalDiff - a.goalDiff;
-      return b.goalsFor - a.goalsFor;
+      if (b.goalsFor !== a.goalsFor) return b.goalsFor - a.goalsFor;
+      return a.team.localeCompare(b.team);
     });
 
     html += `
@@ -506,12 +571,13 @@ function showStandings() {
     `;
 
     sortedTeams.forEach((team, index) => {
-
       const belgiumClass =
         team.team.includes("België") ? "belgium-row" : "";
+
       const rankClass = `rank-${index + 1}`;
+
       html += `
-      <tr class="${rankClass} ${belgiumClass}">
+        <tr class="${rankClass} ${belgiumClass}">
           <td>${index + 1}</td>
           <td>${team.team}</td>
           <td>${team.played}</td>
@@ -520,7 +586,7 @@ function showStandings() {
           <td>${team.losses}</td>
           <td>${team.goalsFor}</td>
           <td>${team.goalsAgainst}</td>
-          <td>${team.goalDiff}</td>
+          <td>${team.goalDiff > 0 ? "+" + team.goalDiff : team.goalDiff}</td>
           <td><strong>${team.points}</strong></td>
         </tr>
       `;
