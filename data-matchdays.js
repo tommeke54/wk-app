@@ -71,6 +71,42 @@ const matchDaysData = [
 },
 {
   day: "Speeldag 3",
-  matches: []
+  matches: [
+    { group:"B", status:"GEPLAND", date:"24 juni 2026", timeBE:"21:00", home:"Zwitserland 🇨🇭", away:"Canada 🇨🇦", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"B", status:"GEPLAND", date:"24 juni 2026", timeBE:"21:00", home:"Bosnië en Herzegovina 🇧🇦", away:"Qatar 🇶🇦", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"C", status:"GEPLAND", date:"25 juni 2026", timeBE:"00:00", home:"Schotland 🏴", away:"Brazilië 🇧🇷", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"C", status:"GEPLAND", date:"25 juni 2026", timeBE:"00:00", home:"Marokko 🇲🇦", away:"Haïti 🇭🇹", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"A", status:"GEPLAND", date:"25 juni 2026", timeBE:"03:00", home:"Tsjechië 🇨🇿", away:"Mexico 🇲🇽", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"A", status:"GEPLAND", date:"25 juni 2026", timeBE:"03:00", home:"Zuid-Afrika 🇿🇦", away:"Zuid-Korea 🇰🇷", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"E", status:"GEPLAND", date:"25 juni 2026", timeBE:"22:00", home:"Ecuador 🇪🇨", away:"Duitsland 🇩🇪", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"E", status:"GEPLAND", date:"25 juni 2026", timeBE:"22:00", home:"Curaçao 🇨🇼", away:"Ivoorkust 🇨🇮", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"F", status:"GEPLAND", date:"26 juni 2026", timeBE:"01:00", home:"Tunesië 🇹🇳", away:"Nederland 🇳🇱", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"F", status:"GEPLAND", date:"26 juni 2026", timeBE:"01:00", home:"Japan 🇯🇵", away:"Zweden 🇸🇪", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"D", status:"GEPLAND", date:"26 juni 2026", timeBE:"04:00", home:"Turkije 🇹🇷", away:"Verenigde Staten 🇺🇸", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"D", status:"GEPLAND", date:"26 juni 2026", timeBE:"04:00", home:"Paraguay 🇵🇾", away:"Australië 🇦🇺", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"I", status:"GEPLAND", date:"26 juni 2026", timeBE:"21:00", home:"Noorwegen 🇳🇴", away:"Frankrijk 🇫🇷", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"I", status:"GEPLAND", date:"26 juni 2026", timeBE:"21:00", home:"Senegal 🇸🇳", away:"Irak 🇮🇶", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"H", status:"GEPLAND", date:"27 juni 2026", timeBE:"02:00", home:"Uruguay 🇺🇾", away:"Spanje 🇪🇸", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"H", status:"GEPLAND", date:"27 juni 2026", timeBE:"02:00", home:"Kaapverdië 🇨🇻", away:"Saudi-Arabië 🇸🇦", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"G", status:"GEPLAND", date:"27 juni 2026", timeBE:"05:00", home:"Nieuw-Zeeland 🇳🇿", away:"België 🇧🇪", score:"VS", stadium:"Philadelphia Stadium" },
+    { group:"G", status:"GEPLAND", date:"27 juni 2026", timeBE:"05:00", home:"Egypte 🇪🇬", away:"Iran 🇮🇷", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"L", status:"GEPLAND", date:"27 juni 2026", timeBE:"23:00", home:"Panama 🇵🇦", away:"Engeland 🏴", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"L", status:"GEPLAND", date:"27 juni 2026", timeBE:"23:00", home:"Kroatië 🇭🇷", away:"Ghana 🇬🇭", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"K", status:"GEPLAND", date:"28 juni 2026", timeBE:"01:30", home:"Colombia 🇨🇴", away:"Portugal 🇵🇹", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"K", status:"GEPLAND", date:"28 juni 2026", timeBE:"01:30", home:"DR Congo 🇨🇩", away:"Oezbekistan 🇺🇿", score:"VS", stadium:"Nog aan te vullen" },
+
+    { group:"J", status:"GEPLAND", date:"28 juni 2026", timeBE:"04:00", home:"Jordanië 🇯🇴", away:"Argentinië 🇦🇷", score:"VS", stadium:"Nog aan te vullen" },
+    { group:"J", status:"GEPLAND", date:"28 juni 2026", timeBE:"04:00", home:"Algerije 🇩🇿", away:"Oostenrijk 🇦🇹", score:"VS", stadium:"Nog aan te vullen" }
+  ]
 }
 ];
