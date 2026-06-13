@@ -133,12 +133,7 @@ function showMatchDay2() {
 }
 
 function showMatchDay3() {
-  app.innerHTML = `
-    <div class="card">
-      <h2>📅 Speeldag 3</h2>
-      Wedstrijden volgen hier.
-    </div>
-  `;
+  showMatchDay("Speeldag 3");
 }
 function showPlayers(countryName) {
   const team = teamsData.find(t => t.name === countryName);
