@@ -510,7 +510,7 @@ function showStandings() {
 
       const belgiumClass =
         team.team.includes("België") ? "belgium-row" : "";
-
+      const rankClass = `rank-${index + 1}`;
       html += `
         <tr class="${belgiumClass}">
           <td>${index + 1}</td>
