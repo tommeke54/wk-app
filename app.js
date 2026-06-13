@@ -184,7 +184,7 @@ en alle WK-supporters wereldwijd.
 
 ⚽ Standen · Nieuws · Uitslagen · België · Stadions
 
-    ⚽ Standen · Nieuws · Uitslagen · België · Stadions
+    
     <br><br>
 
     <span style="color:#FFD700;font-weight:bold;">
