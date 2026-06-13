@@ -656,14 +656,36 @@ function showTeams() {
 function showLiveNewsFeed() {
   app.innerHTML = `
     <div class="card">
-      <h2>🛰 Live Nieuws Pro</h2>
-      Live nieuwsfeed wordt voorbereid.
+      <h2>📰 Dagelijks Nieuws Pro</h2>
+      Overzicht van het belangrijkste WK-nieuws
     </div>
 
     <div class="card">
-      🚧 Deze functie komt in v12.0.
-      <br><br>
-      Nieuws Pro blijft voorlopig actief als backup.
+      <h2>🇧🇪 België Vandaag</h2>
+      • Rode Duivels bereiden zich voor op België - Egypte<br>
+      • Laatste training succesvol afgewerkt<br>
+      • Focus op een sterke WK-start
+    </div>
+
+    <div class="card">
+      <h2>🏆 WK Vandaag</h2>
+      • Groep B komt in actie<br>
+      • Qatar opent zijn WK-campagne<br>
+      • Zwitserland mikt op groepswinst
+    </div>
+
+    <div class="card">
+      <h2>🔥 Trending</h2>
+      • Mexico wint openingswedstrijd<br>
+      • Zuid-Korea start sterk in Groep A<br>
+      • Eerste verrassingen van het toernooi
+    </div>
+
+    <div class="card">
+      <h2>📅 Morgen op het WK</h2>
+      • Brazilië - Marokko<br>
+      • Haïti - Schotland<br>
+      • Australië - Turkije
     </div>
   `;
 }
