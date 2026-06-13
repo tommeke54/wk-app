@@ -158,6 +158,69 @@ function showHome() {
       <button onclick="showLiveScores()">🔴 Live</button>
       <button onclick="showBelgium()">🇧🇪 België</button>
     </div>
+  <div class="card" style="text-align:center;">
+  <h2>🏆 WorldCup Live Pro</h2>
+
+  <div style="font-size:18px;line-height:1.8;">
+    <strong>Een persoonlijke WK-app</strong><br>
+    gemaakt voor supporters, spanning en België 🇧🇪
+    <br><br>
+
+    👨‍💻 <strong>Ontwikkeld door</strong><br>
+    Tom Vanhees
+    <br><br>
+
+    🤖 <strong>Met ondersteuning van</strong><br>
+    ChatGPT
+    <br><br>
+
+    ⚽ Standen · Nieuws · Uitslagen · België · Stadions
+    <br><br>
+
+    <span style="color:#FFD700;font-weight:bold;">
+      Versie v16.2 Credits & Share Pro
+    </span>
+  </div>
+
+  <hr style="margin:20px 0;">
+
+  <h3>📱 Deel deze app</h3>
+  <p>Scan de QR-code en open WorldCup Live Pro direct.</p>
+
+  <img 
+    src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://tommeke54.github.io/wk-app/"
+    alt="QR-code WorldCup Live Pro"
+    style="
+      background:white;
+      padding:12px;
+      border-radius:16px;
+      margin:12px auto;
+      display:block;
+      max-width:180px;
+    "
+  >
+
+  <a 
+    href="https://tommeke54.github.io/wk-app/"
+    target="_blank"
+    style="
+      display:inline-block;
+      margin-top:12px;
+      padding:12px 18px;
+      border-radius:12px;
+      background:#FFD700;
+      color:#111;
+      text-decoration:none;
+      font-weight:bold;
+    "
+  >
+    🌍 Open de app
+  </a>
+
+  <p style="font-size:13px;opacity:.75;margin-top:14px;">
+    tommeke54.github.io/wk-app
+  </p>
+</div>
   `;
 
   if (belgiumMatch) {
