@@ -87,23 +87,29 @@ function showMatches() {
     </div>
   `;
 }
-function showMatches() {
+function showMatchDay1() {
   app.innerHTML = `
     <div class="card">
-      <h2>⚽ WK Wedstrijden</h2>
-      Kies een speeldag
+      <h2>📅 Speeldag 1</h2>
+      Wedstrijden volgen hier.
     </div>
+  `;
+}
 
+function showMatchDay2() {
+  app.innerHTML = `
     <div class="card">
-      <button onclick="showMatchDay1()">📅 Speeldag 1</button>
+      <h2>📅 Speeldag 2</h2>
+      Wedstrijden volgen hier.
     </div>
+  `;
+}
 
+function showMatchDay3() {
+  app.innerHTML = `
     <div class="card">
-      <button onclick="showMatchDay2()">📅 Speeldag 2</button>
-    </div>
-
-    <div class="card">
-      <button onclick="showMatchDay3()">📅 Speeldag 3</button>
+      <h2>📅 Speeldag 3</h2>
+      Wedstrijden volgen hier.
     </div>
   `;
 }
