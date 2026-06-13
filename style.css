@@ -279,3 +279,31 @@ transform:scale(1.15);
 .belgium-row .team-column::after {
   content: " ⭐";
 }
+.standings-card{
+  background:#111827;
+  color:white;
+  padding:15px;
+  border-radius:15px;
+  margin:15px 0;
+}
+
+.standings-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.standings-table th,
+.standings-table td{
+  padding:8px;
+  border-bottom:1px solid #333;
+  text-align:center;
+}
+
+.standings-table th{
+  background:#222;
+}
+
+.belgium-row{
+  background:rgba(255,215,0,0.15);
+  font-weight:bold;
+}
