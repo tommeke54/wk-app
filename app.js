@@ -413,19 +413,35 @@ function showBelgium() {
 function showNotifications() {
   app.innerHTML = `
     <div class="card">
-      <h2>🔔 Meldingen Center</h2>
-      Persoonlijke herinneringen voor het WK
+      <h2>🔔 Meldingen Pro</h2>
+      Belangrijke komende WK-wedstrijden
     </div>
 
     <div class="card">
-      ✅ 1 dag vooraf<br>
-      ✅ 1 uur vooraf<br>
-      ✅ Bij aftrap<br>
-      ✅ Bij knock-out wedstrijden
+      <h2>🇧🇪 België vs Egypte</h2>
+      ⏰ 15 juni 2026<br>
+      🏟 Seattle Stadium<br>
+      🔔 Herinnering 24 uur vooraf
+    </div>
+
+    <div class="card">
+      <h2>🇧🇪 België vs Iran</h2>
+      ⏰ 21 juni 2026<br>
+      🔔 Herinnering 24 uur vooraf
+    </div>
+
+    <div class="card">
+      <h2>🇧🇪 Nieuw-Zeeland vs België</h2>
+      ⏰ 26 juni 2026<br>
+      🔔 Herinnering 24 uur vooraf
+    </div>
+
+    <div class="card">
+      <h2>🏆 Knock-out fase</h2>
+      🔔 Meldingen actief zodra België zich plaatst
     </div>
   `;
 }
-
 function showLiveScores() {
   let html = `
     <div class="card">
