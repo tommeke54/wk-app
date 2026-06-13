@@ -371,8 +371,7 @@ function showNews() {
   newsData.forEach(news => {
     html += `
       <div class="card">
-        <h2>📰 ${news.category}</h2>
-
+       <h2>${news.category}</h2> 
         <strong>${news.title}</strong><br><br>
 
         ${news.text}
