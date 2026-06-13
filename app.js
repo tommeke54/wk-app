@@ -68,63 +68,45 @@ function showHome() {
 }
 
 function showMatches() {
-  let html = `
+  app.innerHTML = `
     <div class="card">
-      <h2>⚽ WK 2026 Wedstrijden Center</h2>
-      Wedstrijden worden geladen uit data-matches.js
+      <h2>⚽ WK Wedstrijden</h2>
+      Kies een speeldag
+    </div>
+
+    <div class="card">
+      <button onclick="showMatchDay1()">📅 Speeldag 1</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showMatchDay2()">📅 Speeldag 2</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showMatchDay3()">📅 Speeldag 3</button>
     </div>
   `;
-
-  matchesData.forEach(match => {
-    html += `
-      <div class="card match-card">
-        <h2>${match.status}</h2>
-
-        ${match.home}
-        <div class="vs">${match.score}</div>
-        ${match.away}
-
-        <br><br>
-
-        📌 Groep ${match.group}<br>
-        📅 ${match.date}<br>
-        🕘 Belgische tijd: ${match.timeBE}<br>
-        🏟 ${match.stadium}
-      </div>
-    `;
-  });
-
-  app.innerHTML = html;
 }
-function showTeams() {
-  let html = `
+function showMatches() {
+  app.innerHTML = `
     <div class="card">
-      <h2>🌍 Alle WK-landen & Spelers</h2>
-      Klik op een land om de spelers te bekijken.
+      <h2>⚽ WK Wedstrijden</h2>
+      Kies een speeldag
+    </div>
+
+    <div class="card">
+      <button onclick="showMatchDay1()">📅 Speeldag 1</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showMatchDay2()">📅 Speeldag 2</button>
+    </div>
+
+    <div class="card">
+      <button onclick="showMatchDay3()">📅 Speeldag 3</button>
     </div>
   `;
-
-  teamsData.forEach(team => {
-    html += `
-      <div class="card">
-        <h2>${team.flag} ${team.name}</h2>
-        📌 Groep: ${team.group}<br>
-        👔 Bondscoach: ${team.coach}<br><br>
-
-        <button onclick="setFavorite('${team.name} ${team.flag}')">
-          ⭐ Favoriet maken
-        </button>
-
-        <button onclick="showPlayers('${team.name}')">
-          👥 Bekijk spelers
-        </button>
-      </div>
-    `;
-  });
-
-  app.innerHTML = html;
 }
-
 function showPlayers(countryName) {
   const team = teamsData.find(t => t.name === countryName);
   const countryPlayers = playersData.find(p => p.country === countryName);
