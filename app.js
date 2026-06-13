@@ -88,14 +88,46 @@ function showMatches() {
   `;
 }
 function showMatchDay1() {
-  app.innerHTML = `
+  showMatchDay("Speeldag 1");
+}
+function showMatchDay(dayName) {
+  const matchDay = matchDaysData.find(day => day.day === dayName);
+
+  let html = `
     <div class="card">
-      <h2>📅 Speeldag 1</h2>
-      Wedstrijden volgen hier.
+      <h2>📅 ${dayName}</h2>
+      Groepsfase wedstrijden
+      <br><br>
+      <button onclick="showMatches()">⬅ Terug naar speeldagen</button>
     </div>
   `;
-}
 
+  if (!matchDay || matchDay.matches.length === 0) {
+    html += `
+      <div class="card">
+        Nog geen wedstrijden toegevoegd.
+      </div>
+    `;
+  } else {
+    matchDay.matches.forEach(match => {
+      html += `
+        <div class="card match-card">
+          <h2>${match.status}</h2>
+          ${match.home}
+          <div class="vs">${match.score}</div>
+          ${match.away}<br><br>
+
+          📌 Groep ${match.group}<br>
+          📅 ${match.date}<br>
+          🕘 Belgische tijd: ${match.timeBE}<br>
+          🏟 ${match.stadium}
+        </div>
+      `;
+    });
+  }
+
+  app.innerHTML = html;
+}
 function showMatchDay2() {
   app.innerHTML = `
     <div class="card">
