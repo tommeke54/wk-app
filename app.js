@@ -28,45 +28,147 @@ function setFavorite(team) {
   showHome();
 }
 
+function parseMatchDate(match) {
+  const months = {
+    "januari": 0,
+    "februari": 1,
+    "maart": 2,
+    "april": 3,
+    "mei": 4,
+    "juni": 5,
+    "juli": 6,
+    "augustus": 7,
+    "september": 8,
+    "oktober": 9,
+    "november": 10,
+    "december": 11
+  };
+
+  const parts = match.date.split(" ");
+  const day = parseInt(parts[0]);
+  const month = months[parts[1]];
+  const year = parseInt(parts[2]);
+  const [hour, minute] = match.timeBE.split(":").map(Number);
+
+  return new Date(year, month, day, hour, minute);
+}
+
+function getNextBelgiumMatch() {
+  const allMatches = matchDaysData.flatMap(day => day.matches);
+
+  return allMatches
+    .filter(match =>
+      match.status !== "AFGELOPEN" &&
+      (match.home.includes("België") || match.away.includes("België"))
+    )
+    .sort((a, b) => parseMatchDate(a) - parseMatchDate(b))[0];
+}
+
+function getLatestResult() {
+  const allMatches = matchDaysData.flatMap(day => day.matches);
+
+  return allMatches
+    .filter(match => match.status === "AFGELOPEN")
+    .sort((a, b) => parseMatchDate(b) - parseMatchDate(a))[0];
+}
+
+function updateBelgiumCountdown(matchDate) {
+  const el = document.getElementById("belgiumCountdown");
+  if (!el) return;
+
+  const now = new Date();
+  const diff = matchDate - now;
+
+  if (diff <= 0) {
+    el.innerHTML = "🇧🇪 De wedstrijd is gestart!";
+    return;
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  el.innerHTML = `${days}d ${hours}u ${minutes}m ${seconds}s`;
+}
+
 function showHome() {
+  const belgiumMatch = getNextBelgiumMatch();
+  const latestResult = getLatestResult();
+  const latestNews = newsData[0];
+
+  if (window.homeCountdownTimer) {
+    clearInterval(window.homeCountdownTimer);
+  }
+
   app.innerHTML = `
     <div class="card">
-      <h2>🏆 Mijn WK Dashboard</h2>
-      WorldCup Live Pro
-    </div>
-
-    <div class="card">
-      <h2>⭐ Favoriete ploeg</h2>
-      <strong>${favoriteTeam}</strong><br><br>
-      <button onclick="showTeams()">Favoriet wijzigen</button>
+      <h2>🏆 WorldCup Live Pro</h2>
+      Jouw persoonlijke WK-dashboard
     </div>
 
     <div class="card match-card">
-      <h2>⚽ Volgende wedstrijd</h2>
-      🇧🇪 België
-      <div class="vs">VS</div>
-      🇫🇷 Frankrijk<br><br>
-      📅 20 juni 2026<br>
-      🕘 Belgische tijd: 21:00<br>
-      🏟 MetLife Stadium
+      <h2>🇧🇪 Volgende België-wedstrijd</h2>
+      ${belgiumMatch ? `
+        ${belgiumMatch.home}
+        <div class="vs">${belgiumMatch.score}</div>
+        ${belgiumMatch.away}<br><br>
+        📅 ${belgiumMatch.date}<br>
+        🕘 Belgische tijd: ${belgiumMatch.timeBE}<br>
+        🏟 ${belgiumMatch.stadium}
+      ` : `
+        Geen komende België-wedstrijd gevonden.
+      `}
     </div>
 
     <div class="card">
-      <h2>⏳ Countdown</h2>
-      ${getCountdown()}
+      <h2>⏳ Aftellen naar België</h2>
+      <div id="belgiumCountdown" style="font-size:26px;font-weight:bold;color:#FFD700;">
+        Laden...
+      </div>
+    </div>
+
+    <div class="card match-card">
+      <h2>📋 Laatste uitslag</h2>
+      ${latestResult ? `
+        ${latestResult.home}
+        <div class="vs">${latestResult.score}</div>
+        ${latestResult.away}<br><br>
+        📅 ${latestResult.date}<br>
+        🏟 ${latestResult.stadium}
+      ` : `
+        Nog geen uitslagen bekend.
+      `}
     </div>
 
     <div class="card">
-      <h2>🏟 Stadioninfo</h2>
-      MetLife Stadium<br>
-      📍 East Rutherford, New Jersey<br>
-      🌍 Verenigde Staten<br>
-      👥 Capaciteit: ongeveer 82.500<br>
-      🕒 Lokale stadiontijd: ${stadiumTime()}
+      <h2>📰 Laatste nieuws</h2>
+      ${latestNews ? `
+        <strong>${latestNews.title}</strong><br><br>
+        ${latestNews.text}
+      ` : `
+        Geen nieuws beschikbaar.
+      `}
+    </div>
+
+    <div class="card">
+      <h2>⚡ Snelle toegang</h2>
+      <button onclick="showMatches()">⚽ Wedstrijden</button>
+      <button onclick="showStandings()">📊 Standen</button>
+      <button onclick="showLiveScores()">🔴 Live</button>
+      <button onclick="showBelgium()">🇧🇪 België</button>
     </div>
   `;
-}
 
+  if (belgiumMatch) {
+    const matchDate = parseMatchDate(belgiumMatch);
+    updateBelgiumCountdown(matchDate);
+
+    window.homeCountdownTimer = setInterval(() => {
+      updateBelgiumCountdown(matchDate);
+    }, 1000);
+  }
+}
 function showMatches() {
   app.innerHTML = `
     <div class="card">
