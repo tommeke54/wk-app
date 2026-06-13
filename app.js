@@ -601,5 +601,5 @@ function showStandings() {
 
   app.innerHTML = html;
 }
-function showLiveNewsFeed()
+
 showHome();
