@@ -497,6 +497,7 @@ function showMore() {
     <div class="card"><button onclick="showNews()">📰 Nieuws</button></div>
     <div class="card"><button onclick="showLiveNewsFeed()">🛰 Live Nieuws</button></div>
     <div class="card"><button onclick="showNotifications()">🔔 Meldingen</button></div>
+    <div class="card"><button onclick="showDailyResults()">📋 Dagelijkse Uitslagen</button></div>
   `;
 }
 function calculateLiveStandings() {
