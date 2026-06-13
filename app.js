@@ -601,5 +601,24 @@ function showStandings() {
 
   app.innerHTML = html;
 }
+function showTeams() {
+  let html = `
+    <div class="card">
+      <h2>👥 Teams</h2>
+      Kies een land om spelers te bekijken
+    </div>
+  `;
 
+  teamsData.forEach(team => {
+    html += `
+      <div class="card">
+        <h2>${team.flag || ""} ${team.name}</h2>
+        <button onclick="showPlayers('${team.name}')">Spelers bekijken</button>
+        <button onclick="setFavorite('${team.name} ${team.flag || ""}')">⭐ Favoriet maken</button>
+      </div>
+    `;
+  });
+
+  app.innerHTML = html;
+}
 showHome();
