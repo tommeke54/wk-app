@@ -429,24 +429,39 @@ function showNotifications() {
 function showLiveScores() {
   let html = `
     <div class="card">
-      <h2>🔴 Live Scores Center</h2>
-      Live scores geladen uit data-livescores.js
+      <h2>🔴 Live Scores Pro</h2>
+      Live uitslagen en wedstrijdstatus
     </div>
   `;
 
   liveScoresData.forEach(match => {
+
+    const statusIcon =
+      match.status === "LIVE" ? "🔴" :
+      match.status === "AFGELOPEN" ? "✅" :
+      "⏳";
+
     html += `
       <div class="card match-card">
-        <h2>🔴 ${match.status}</h2>
 
-        ${match.home}
-        <div class="vs">${match.score}</div>
-        ${match.away}
+        <h2>${statusIcon} ${match.status}</h2>
 
-        <br><br>
+        <div style="font-size:22px;font-weight:bold;margin:15px 0;">
+          ${match.home}
+          <br>
+          <span style="color:#FFD700;font-size:28px;">
+            ${match.score}
+          </span>
+          <br>
+          ${match.away}
+        </div>
 
-        ⏱ Minuut ${match.minute}<br>
-        ⚽ Laatste goal: ${match.lastGoal}
+        <hr>
+
+        <p>⏱ <strong>Minuut:</strong> ${match.minute}</p>
+
+        <p>⚽ <strong>Laatste doelpunt:</strong> ${match.lastGoal}</p>
+
       </div>
     `;
   });
