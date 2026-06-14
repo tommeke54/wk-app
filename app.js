@@ -188,7 +188,7 @@ en alle WK-supporters wereldwijd.
     <br><br>
 
     <span style="color:#FFD700;font-weight:bold;">
-      Versie v16.2 Credits & Share Pro
+      🏆 Signature Edition
     </span>
   </div>
 
