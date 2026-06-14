@@ -103,9 +103,17 @@ function showHome() {
 
   app.innerHTML = `
     <div class="card">
-      <h2>🏆 WorldCup Live Pro</h2>
-      Jouw persoonlijke WK-dashboard
-    </div>
+  <h2>🏆 WorldCup Live Pro</h2>
+
+  <div class="news-ticker">
+    <span>
+      📢 WorldCup Live Pro is nog in ontwikkeling •
+      We werken dagelijks aan verbeteringen •
+      Nieuws en uitslagen worden voortdurend bijgewerkt •
+      Bedankt voor je steun 🇧🇪
+    </span>
+  </div>
+</div>
 
     <div class="card match-card">
       <h2>🇧🇪 Volgende België-wedstrijd</h2>
