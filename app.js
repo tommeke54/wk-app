@@ -158,7 +158,7 @@ function showHome() {
       <button onclick="showLiveScores()">🔴 Live</button>
       <button onclick="showBelgium()">🇧🇪 België</button>
     </div>
-  <div class="card" style="text-align:center;">
+  <div class="card" style="text-align:center; margin-bottom:120px;">
   <h2>🏆 WorldCup Live Pro</h2>
 
   <div style="font-size:18px;line-height:1.8;">
